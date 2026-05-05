@@ -1,0 +1,832 @@
+/* ===========================
+   CASE STUDY — ADHIBAN
+   Base: 1920px design. All values use min() tokens from styles.css.
+=========================== */
+
+/* ── Image placeholder styling ──
+   All [data-placeholder] imgs show a grey box until src is filled.
+   Once you set src="your/path.jpg", the placeholder disappears.
+================================================ */
+img[data-placeholder] {
+  background: #e8e8e8;
+  min-height: 100%;
+  min-width: 100%;
+  display: block;
+}
+img[data-placeholder]:not([src=""]) {
+  background: none;
+}
+
+/* ===========================
+   NAVBAR override for page variant
+=========================== */
+.navbar--page {
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}
+
+/* ===========================
+   SECTION GAP — 130px between every section (mirrors Figma flex gap)
+=========================== */
+.cs-hero,
+.cs-intro,
+.cs-challenge,
+.cs-solution,
+.cs-features,
+.cs-outcomes-cards,
+.cs-stats,
+.cs-process,
+.cs-final-thoughts,
+.cs-testimonial,
+.cs-next,
+.cs-cta {
+  margin-top: min(6.771vw, 130px);
+}
+
+/* ===========================
+   HERO
+=========================== */
+.cs-hero {
+  padding: 0 var(--pad) 0;
+  display: flex;
+  flex-direction: column;
+  gap: min(3.125vw, 60px);
+}
+
+.cs-hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: min(2.083vw, 40px);
+}
+
+.cs-hero__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.458vw, 28px);
+}
+
+.cs-hero__title {
+  font-size: min(4.167vw, 80px);
+  font-weight: 300;
+  line-height: 1.246;
+  color: var(--black);
+}
+
+.cs-hero__subtitle {
+  font-size: var(--fs-32);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.62;
+}
+
+.cs-hero__tags {
+  display: flex;
+  gap: min(0.833vw, 16px);
+  flex-wrap: wrap;
+}
+
+.cs-tag {
+  background: var(--neutral-100);
+  color: var(--black);
+  font-size: var(--fs-24);
+  font-weight: 400;
+  padding: min(0.417vw, 8px) min(0.833vw, 16px);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+
+/* Meta block — right side */
+.cs-hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.833vw, 16px);
+  width: min(27.292vw, 524px);
+  flex-shrink: 0;
+}
+
+.cs-meta-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: min(0.833vw, 16px);
+  border-left: 3px solid var(--brand);
+  gap: 2px;
+}
+
+.cs-meta-item__label {
+  font-size: var(--fs-24);
+  font-weight: 700;
+  color: var(--black);
+}
+
+.cs-meta-item__value {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: rgba(0,0,0,0.65);
+}
+
+.cs-meta-item__sep {
+  color: var(--brand);
+}
+
+/* Hero banner image */
+.cs-hero__img-wrap {
+  width: 100%;
+  height: min(47.708vw, 916px);
+  overflow: hidden;
+  border-radius: var(--r-card);
+}
+
+.cs-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--r-card);
+  display: block;
+}
+
+
+/* ===========================
+   INTRO PARAGRAPH
+=========================== */
+.cs-intro {
+  padding: 0 var(--pad);
+}
+
+.cs-intro__text {
+  font-size: var(--fs-40);
+  font-weight: 400;
+  color: rgba(36,33,33,0.81);
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* ===========================
+   THE CHALLENGE
+=========================== */
+.cs-challenge {
+  padding: 0 var(--pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: min(2.083vw, 40px);
+}
+
+.cs-section-title {
+  font-size: var(--fs-48);
+  font-weight: 400;
+  color: #302b2a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cs-challenge__body {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: rgba(36,33,33,0.81);
+  width: min(44.01vw, 845px);
+  line-height: 1.6;
+}
+
+
+/* ===========================
+   THE SOLUTION
+=========================== */
+.cs-solution {
+  padding: 0 var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: min(1.667vw, 32px);
+}
+
+.cs-solution__header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: min(2.083vw, 40px);
+  flex-wrap: wrap;
+  min-height: min(12.708vw, 244px);
+}
+
+.cs-solution__cards-row {
+  display: flex;
+  gap: min(1.667vw, 32px);
+}
+
+.cs-solution-card {
+  background: var(--neutral-100);
+  border-radius: var(--r-card);
+  padding: min(1.25vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: min(2.083vw, 40px);
+  flex: 1;
+}
+
+/* First card in header row gets fixed width matching Figma */
+.cs-solution__header-row .cs-solution-card {
+  flex: 0 0 min(43.854vw, 842px);
+}
+
+.cs-solution-card__heading {
+  font-size: var(--fs-32);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.cs-solution-card__body {
+  font-size: var(--fs-20);
+  font-weight: 400;
+  color: rgba(0,0,0,0.71);
+  line-height: 1.4;
+}
+
+/* Solution fullwidth image */
+.cs-solution__img-wrap {
+  width: 100%;
+  height: min(37.917vw, 728px);
+  overflow: hidden;
+  border-radius: var(--r-card);
+  margin-top: min(1.25vw, 24px);
+}
+
+.cs-solution__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ===========================
+   KEY FEATURES
+=========================== */
+.cs-features {
+  padding: 0 var(--pad);
+}
+
+.cs-features__inner {
+  display: flex;
+  gap: min(4.01vw, 77px);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cs-features__left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+}
+
+.cs-features__desc {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+.cs-features__right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cs-features__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: min(2.656vw, 51px) min(1.25vw, 24px);
+}
+
+.cs-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.625vw, 12px);
+}
+
+.cs-feature-item__title {
+  font-size: var(--fs-40);
+  font-weight: 600;
+  color: var(--brand);
+  line-height: 1.2;
+}
+
+.cs-feature-item__body {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+
+/* ===========================
+   OUTCOMES — IMAGE CARDS
+=========================== */
+.cs-outcomes-cards {
+  padding: 0 var(--pad);
+  display: flex;
+  gap: min(1.042vw, 20px);
+  height: min(31.354vw, 602px);
+}
+
+.cs-outcomes-card {
+  flex: 1;
+  background: #f4f4f4;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  position: relative;
+}
+
+.cs-outcomes-card__eyebrow {
+  position: absolute;
+  top: min(2.083vw, 40px);
+  left: min(1.771vw, 34px);
+  font-size: var(--fs-20);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.2;
+  z-index: 2;
+}
+
+/* Images overflow intentionally to fill card — mirrors Figma */
+.cs-outcomes-card__img {
+  position: absolute;
+  bottom: 0;
+  width: 120%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.cs-outcomes-card__img--left {
+  left: -5%;
+}
+
+.cs-outcomes-card__img--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* ===========================
+   OUTCOMES — STATS (dark bg)
+=========================== */
+.cs-stats {
+  background: var(--black);
+  padding: min(6.771vw, 130px) var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: min(3.75vw, 72px);
+}
+
+.cs-stats__header {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.417vw, 8px);
+}
+
+.cs-stats__eyebrow {
+  font-size: var(--fs-40);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.cs-stats__subtitle {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  line-height: 1.33;
+}
+
+.cs-stats__grid {
+  display: flex;
+  gap: min(2.083vw, 40px);
+  flex-wrap: wrap;
+}
+
+.cs-stat {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: min(0.417vw, 8px);
+}
+
+.cs-stat__num {
+  font-size: min(3.333vw, 64px);
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.2;
+}
+
+.cs-stat__body {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.521vw, 10px);
+}
+
+.cs-stat__title {
+  font-size: var(--fs-36);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.167;
+}
+
+.cs-stat__desc {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.33;
+}
+
+
+/* ===========================
+   THE PROCESS
+=========================== */
+.cs-process {
+  position: relative;
+  height: min(60.469vw, 1161px);
+  overflow: hidden;
+}
+
+.cs-process__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-process__label {
+  position: absolute;
+  top: min(1.146vw, 22px);
+  left: min(1.771vw, 34px);
+  font-size: var(--fs-48);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+
+/* ===========================
+   FINAL THOUGHTS
+=========================== */
+.cs-final-thoughts {
+  padding: 0 var(--pad);
+  display: flex;
+  flex-wrap: wrap;
+  gap: min(1.042vw, 20px);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cs-final-thoughts__title {
+  font-size: var(--fs-48);
+  font-weight: 700;
+  color: #302b2a;
+  width: min(44.063vw, 846px);
+  line-height: 1.3;
+}
+
+.cs-final-thoughts__body {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: rgba(36,33,33,0.81);
+  width: min(43.646vw, 838px);
+  line-height: 1.6;
+}
+
+.cs-final-thoughts__body strong {
+  font-weight: 700;
+  color: #242121;
+}
+
+
+/* ===========================
+   TESTIMONIAL
+=========================== */
+.cs-testimonial {
+  padding: 0 var(--pad);
+}
+
+.cs-testimonial__card {
+  background: linear-gradient(104.79deg, #ff5023 1.51%, #ff3939 100%);
+  border-radius: min(2.083vw, 40px);
+  padding: min(4.167vw, 80px) min(2.083vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(2.083vw, 40px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-testimonial__icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: min(20.956vw, 402px);
+  height: auto;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.cs-testimonial__heading {
+  font-size: var(--fs-48);
+  font-weight: 700;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.cs-testimonial__quote {
+  font-size: var(--fs-36);
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.556;
+  max-width: min(62.5vw, 1200px);
+  position: relative;
+  z-index: 1;
+}
+
+.cs-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: min(0.521vw, 10px);
+  position: relative;
+  z-index: 1;
+}
+
+.cs-testimonial__avatar {
+  width: min(3.125vw, 60px);
+  height: min(3.125vw, 60px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.3);
+  overflow: hidden;
+}
+
+.cs-testimonial__avatar[data-placeholder] {
+  min-width: 0;
+  min-height: 0;
+}
+
+.cs-testimonial__avatar--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  font-size: var(--fs-20);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cs-testimonial__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.26vw, 5px);
+  color: var(--white);
+}
+
+.cs-testimonial__name {
+  font-family: 'Figtree', 'Manrope', sans-serif;
+  font-size: var(--fs-20);
+  font-weight: 600;
+  line-height: 1.143;
+}
+
+.cs-testimonial__role {
+  font-family: 'Figtree', 'Manrope', sans-serif;
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.125;
+  text-align: center;
+}
+
+
+/* ===========================
+   NEXT PROJECT
+=========================== */
+.cs-next {
+  padding: 0 var(--pad);
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: min(1.042vw, 20px);
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-next__info {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+  width: min(43.854vw, 842px);
+}
+
+.cs-next__title {
+  font-size: min(3.333vw, 64px);
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.4375;
+}
+
+.cs-next__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.625vw, 12px);
+  background: var(--neutral-100);
+  color: var(--black);
+  font-size: var(--fs-32);
+  font-weight: 400;
+  padding: min(1.042vw, 20px) min(1.667vw, 32px);
+  border-radius: var(--r-card);
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.cs-next__btn:hover { background: #eaeaea; }
+
+.cs-next__arrow {
+  width: min(2.5vw, 48px);
+  height: min(2.5vw, 48px);
+  flex-shrink: 0;
+}
+
+.cs-next__preview {
+  background: #f4f4f4;
+  border-radius: var(--r-card);
+  width: min(43.854vw, 842px);
+  height: min(20.938vw, 402px);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cs-next__preview-eyebrow {
+  position: absolute;
+  top: min(2.083vw, 40px);
+  left: min(1.771vw, 34px);
+  font-size: var(--fs-20);
+  font-weight: 400;
+  color: var(--black);
+  z-index: 2;
+}
+
+.cs-next__preview-text {
+  position: absolute;
+  top: min(5.521vw, 106px);
+  left: min(2.396vw, 46px);
+  width: min(25.052vw, 481px);
+  font-size: var(--fs-32);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.4;
+  z-index: 2;
+}
+
+.cs-next__preview-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: auto;
+  min-height: 110%;
+  object-fit: cover;
+  border-radius: min(2.083vw, 40px);
+}
+
+
+/* ===========================
+   CTA
+=========================== */
+.cs-cta {
+  position: relative;
+  overflow: hidden;
+  background: #0c0c0c;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cs-cta__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cs-cta__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(1.25vw, 24px);
+  padding: min(6.771vw, 130px) var(--pad);
+}
+
+.cs-cta__heading {
+  font-size: min(3.333vw, 64px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.4375;
+}
+
+.cs-cta__heading--orange {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.cs-cta__sub {
+  font-size: var(--fs-32);
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.62;
+  max-width: min(62.5vw, 1200px);
+}
+
+.cs-cta__btn {
+  background: var(--brand);
+  color: var(--white);
+  font-size: var(--fs-32);
+  font-weight: 400;
+  padding: min(1.458vw, 28px) min(1.667vw, 32px);
+  border-radius: var(--r-card);
+  transition: opacity 0.2s;
+  margin-top: min(0.417vw, 8px);
+}
+
+.cs-cta__btn:hover { opacity: 0.88; }
+
+
+/* ===========================
+   MOBILE OVERRIDES  (<768px)
+=========================== */
+@media (max-width: 768px) {
+  /* Reduce section gap on mobile */
+  .cs-hero, .cs-intro, .cs-challenge, .cs-solution, .cs-features,
+  .cs-outcomes-cards, .cs-stats, .cs-process, .cs-final-thoughts,
+  .cs-testimonial, .cs-next, .cs-cta {
+    margin-top: 60px;
+  }
+
+  .cs-hero__top          { flex-direction: column; align-items: flex-start; }
+  .cs-hero__meta         { width: 100%; }
+  .cs-hero__img-wrap     { height: 220px; }
+  .cs-hero__title        { font-size: 40px; }
+  .cs-hero__subtitle     { font-size: 18px; }
+
+  .cs-hero, .cs-intro, .cs-challenge, .cs-solution, .cs-features,
+  .cs-outcomes-cards, .cs-final-thoughts, .cs-testimonial,
+  .cs-next, .cs-cta      { padding-left: 20px; padding-right: 20px; }
+
+  .cs-stats              { padding: 40px 20px; }
+  .cs-stats__grid        { flex-direction: column; }
+
+  .cs-intro__text        { font-size: 18px; }
+
+  .cs-challenge          { flex-direction: column; }
+  .cs-challenge__body    { width: 100%; }
+
+  .cs-solution__header-row { flex-direction: column; min-height: unset; }
+  .cs-solution__header-row .cs-solution-card { flex: 0 0 auto; width: 100%; }
+  .cs-solution__cards-row  { flex-direction: column; }
+  .cs-solution__img-wrap   { height: 240px; }
+
+  .cs-features__inner    { flex-direction: column; }
+  .cs-features__grid     { grid-template-columns: 1fr; }
+
+  .cs-outcomes-cards     { flex-direction: column; height: auto; gap: 16px; }
+  .cs-outcomes-card      { height: 300px; }
+
+  .cs-process            { height: 300px; }
+
+  .cs-final-thoughts     { flex-direction: column; }
+  .cs-final-thoughts__title,
+  .cs-final-thoughts__body { width: 100%; }
+
+  .cs-testimonial__quote { font-size: 18px; }
+
+  .cs-next               { flex-direction: column; }
+  .cs-next__info,
+  .cs-next__preview      { width: 100%; }
+  .cs-next__preview      { height: 240px; }
+
+  .cs-cta__heading       { font-size: 32px; }
+  .cs-cta__sub           { font-size: 16px; }
+}

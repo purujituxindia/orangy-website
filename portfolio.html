@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Orangy Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="icon" href="Assets/META LOGO.svg">
+</head>
+<body>
+
+<!-- =========================================
+     MOBILE NAV OVERLAY (reused)
+========================================= -->
+<div class="mobile-nav" aria-hidden="true">
+  <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
+  <a href="studio.html">Studio</a>
+  <a href="service.html">Service</a>
+  <a href="portfolio.html">Works</a>
+  <a href="contact.html" class="mobile-nav__cta">Let's Connect</a>
+</div>
+
+<!-- =========================================
+     NAVBAR (reused — sticky variant for non-hero pages)
+========================================= -->
+<nav class="navbar navbar--page">
+  <a href="index.html">
+    <img class="navbar__logo"
+         src="Assets/Orangy-logo-white-bg-orange-icon.svg"
+         alt="Orangy Design">
+  </a>
+  <div class="navbar__nav">
+    <a href="studio.html">Studio</a>
+    <a href="service.html">Service</a>
+    <a href="portfolio.html" class="navbar__nav--active">Works</a>
+  </div>
+  <a href="contact.html" class="navbar__cta">Let's Connect</a>
+  <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- =========================================
+     PORTFOLIO HERO
+========================================= -->
+<section class="pf-hero">
+  <h1 class="pf-hero__heading">Architectural precision.</h1>
+  <p class="pf-hero__sub">
+    We design digital structures that drive B2B performance. No fluff, just mechanical elegance and bold visual outcomes.
+  </p>
+</section>
+
+
+<!-- =========================================
+     PROJECTS — Filters + Grid
+========================================= -->
+<section class="pf-projects">
+
+  <!-- Filter Tabs -->
+  <div class="pf-filters" role="tablist" aria-label="Filter projects by category">
+    <button class="pf-filter pf-filter--active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+    <button class="pf-filter" data-filter="healthcare" role="tab" aria-selected="false">Healthcare</button>
+    <button class="pf-filter" data-filter="iot" role="tab" aria-selected="false">IoT</button>
+    <button class="pf-filter" data-filter="enterprise" role="tab" aria-selected="false">Enterprise</button>
+    <button class="pf-filter" data-filter="edtech" role="tab" aria-selected="false">EdTech</button>
+    <button class="pf-filter" data-filter="retail" role="tab" aria-selected="false">Retail</button>
+  </div>
+
+  <!-- Project Cards Grid -->
+  <div class="pf-grid">
+
+    <!-- ── NoQstore — Full Width ── -->
+    <!-- data-category="retail" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--full" data-category="retail">
+      <div class="pf-card__img-wrap pf-card__img-wrap--pink pf-card__img-wrap--contain">
+        <!-- Replace src with: Assets/Projects/noqstore.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/NoQ.png" alt="NoQstore — Redefining Retail Through Seamless Experiences">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <div class="pf-card__title-group">
+            <h2 class="pf-card__title">NoQstore</h2>
+            <p class="pf-card__desc">Redefining Retail Through Seamless Experiences</p>
+          </div>
+          <span class="pf-card__tag">Retail</span>
+        </div>
+        <div class="pf-card__hashtags">
+          <span>#UXforIoT</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Adhiban — Left Half ── -->
+    <a href="casestudy-adhiban.html" class="pf-card pf-card--half" data-category="fintech">
+      <div class="pf-card__img-wrap">
+        <img class="pf-card__img" src="Assets/Portfolio/Adhiban.png" alt="Adhiban — Empowering Financial Growth with Intelligent Solutions">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">Adhiban</h2>
+          <span class="pf-card__tag">Fintech</span>
+        </div>
+        <p class="pf-card__desc">Empowering Financial Growth with Intelligent Solutions</p>
+        <div class="pf-card__hashtags">
+          <span>#MobileApp</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── SDL — Right Half ── -->
+    <!-- data-category="healthcare" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--half" data-category="healthcare">
+      <div class="pf-card__img-wrap">
+        <!-- Replace src with: Assets/Projects/sdl.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/SDL.png" alt="SDL — Designing reliable interfaces for modern laboratories">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">SDL</h2>
+          <span class="pf-card__tag">Healthcare</span>
+        </div>
+        <p class="pf-card__desc">Designing reliable interfaces for modern laboratories</p>
+        <div class="pf-card__hashtags">
+          <span>#MobileApp</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Edu-tive — Left Half ── -->
+    <!-- data-category="edtech" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--half" data-category="edtech">
+      <div class="pf-card__img-wrap">
+        <!-- Replace src with: Assets/Projects/edu-tive.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/Edutive.png" alt="Edu-tive — Architecting the Future of K-12 Management">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">Edu-tive</h2>
+          <span class="pf-card__tag">EdTech</span>
+        </div>
+        <p class="pf-card__desc">Architecting the Future of K-12 Management</p>
+        <div class="pf-card__hashtags">
+          <span>#SaaS</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Petrus — Right Half ── -->
+    <!-- data-category="iot" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--half" data-category="iot">
+      <div class="pf-card__img-wrap">
+        <!-- Replace src with: Assets/Projects/petrus.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/Petrus.png" alt="Petrus — Crafting Intuitive Dashboard for data-heavy industrial systems">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">Petrus</h2>
+          <span class="pf-card__tag">IoT</span>
+        </div>
+        <p class="pf-card__desc">Crafting Intuitive Dashboard for data-heavy industrial systems</p>
+        <div class="pf-card__hashtags">
+          <span>#UXforIoT</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── ACG — Left Half ── -->
+    <!-- data-category="iot" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--half" data-category="iot">
+      <div class="pf-card__img-wrap">
+        <!-- Replace src with: Assets/Projects/acg.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/ACG.png" alt="ACG — Human-Centered IoT Revolution for Digital Manufacturing">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">ACG</h2>
+          <span class="pf-card__tag">IoT</span>
+        </div>
+        <p class="pf-card__desc">Human-Centered IoT Revolution for Digital Manufacturing</p>
+        <div class="pf-card__hashtags">
+          <span>#UXforIoT</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── MaxByte — Right Half (dark gradient bg) ── -->
+    <!-- data-category="iot" | Replace src="" with project image path -->
+    <article class="pf-card pf-card--half" data-category="iot">
+      <div class="pf-card__img-wrap pf-card__img-wrap--dark">
+        <!-- Replace src with: Assets/Projects/maxbyte.jpg (or your path) -->
+        <img class="pf-card__img" src="Assets/Portfolio/Maxbyte.png" alt="MaxByte — Human-Centered IoT Revolution for Digital Manufacturing">
+      </div>
+      <div class="pf-card__info">
+        <div class="pf-card__meta-row">
+          <h2 class="pf-card__title">MaxByte</h2>
+          <span class="pf-card__tag">IoT</span>
+        </div>
+        <p class="pf-card__desc">Human-Centered IoT Revolution for Digital Manufacturing</p>
+        <div class="pf-card__hashtags">
+          <span>#UXforIoT</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /.pf-grid -->
+</section>
+
+
+<!-- =========================================
+     STATS BAR
+========================================= -->
+<section class="pf-stats">
+  <div class="pf-stat">
+    <span class="pf-stat__num">10+</span>
+    <span class="pf-stat__label">Years in Design</span>
+  </div>
+  <div class="pf-stat">
+    <span class="pf-stat__num">160+</span>
+    <span class="pf-stat__label">Clients</span>
+  </div>
+  <div class="pf-stat">
+    <span class="pf-stat__num">450+</span>
+    <span class="pf-stat__label">Projects</span>
+  </div>
+  <div class="pf-stat">
+    <span class="pf-stat__num">10+</span>
+    <span class="pf-stat__label">Industries</span>
+  </div>
+</section>
+
+
+<!-- =========================================
+     BRANDS (reused from main page)
+========================================= -->
+<section class="brands">
+  <h2 class="brands__title">We design for <strong>Global Brands</strong></h2>
+  <div class="brands__grid">
+    <!-- Row 1 -->
+    <div class="brand-cell"><img src="Assets/Brands/nalasaa 1.svg" alt="Nalasaa"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Edu-tive 1.svg" alt="Edu-tive"></div>
+    <div class="brand-cell"><img src="Assets/Examly 1.svg" alt="Examly" class="brand-no-hover"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Petrus 1.svg" alt="Petrus"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Tacbot 1.svg" alt="Tacbot"></div>
+    <!-- Row 2 -->
+    <div class="brand-cell"><img src="Assets/Brands/GRL 1.svg" alt="GRL"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Trustrace 1.svg" alt="Trustrace"></div>
+    <div class="brand-cell"><img src="Assets/Brands/noqstore.svg" alt="Noqstore"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Asian 1.svg" alt="Asian"></div>
+    <div class="brand-cell"><img src="Assets/Brands/icliniq.svg" alt="iCliniq"></div>
+    <!-- Row 3 -->
+    <div class="brand-cell"><img src="Assets/Brands/Korakkar 1.svg" alt="Korakkar"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Yectra 1.svg" alt="Yectra"></div>
+    <div class="brand-cell"><img src="Assets/Brands/NxtsysRetail 1.svg" alt="NxtsysRetail"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Maxbyte 1.svg" alt="Maxbyte"></div>
+    <div class="brand-cell"><img src="Assets/Brands/am-neo.svg" alt="am-neo"></div>
+    <!-- Row 4 -->
+    <div class="brand-cell"><img src="Assets/Brands/doers-tech 1.svg" alt="Doers Tech"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Monty-cloud.svg" alt="Monty Cloud"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Chutki.svg" alt="Chutki"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Billfin.svg" alt="Billfin"></div>
+    <div class="brand-cell"><img src="Assets/Brands/Enova.svg" alt="Enova"></div>
+  </div>
+</section>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+<section class="pf-cta">
+  <canvas id="cta-canvas" class="pf-cta__canvas" aria-hidden="true"></canvas>
+  <div class="pf-cta__content">
+    <div class="pf-cta__heading">
+      <p>Ready to elevate your product?</p>
+      <p class="pf-cta__heading--orange">Let's build together.</p>
+    </div>
+    <p class="pf-cta__sub">We're selective about the projects we take on. Which means the ones we do, we do well.</p>
+    <a href="mailto:hello@orangy.design" class="pf-cta__btn">Contact Us</a>
+  </div>
+</section>
+
+
+<!-- =========================================
+     FOOTER (reused from main page)
+========================================= -->
+<footer class="footer">
+  <img class="footer__bg-icon"
+       src="https://www.figma.com/api/mcp/asset/1d39d39c-9806-4713-a4d0-8587605a2789"
+       alt="" aria-hidden="true">
+
+  <div class="footer__top">
+    <div class="footer__left">
+      <nav class="footer__nav">
+        <a href="index.html">Home</a>
+        <a href="studio.html">Studio</a>
+        <a href="service.html">Service</a>
+        <a href="portfolio.html" class="footer__nav-active">Works</a>
+        <a href="contact.html">Lets Talk</a>
+      </nav>
+      <div class="footer__socials">
+        <a href="#" aria-label="LinkedIn" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__right">
+      <div>
+        <div class="footer__tagline">Lets Talk about <span>Good&nbsp;&nbsp;UX,</span></div>
+        <div class="footer__email">hello@orangy.design</div>
+      </div>
+      <div class="footer__phone">
+        <img class="footer__phone-icon"
+             src="Assets/whatsapp-svgrepo-com 1.svg"
+             alt="WhatsApp">
+        <span>+91 900 357 8010</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <img class="footer__logo"
+         src="Assets/Orangy-logo-footer-icon.svg"
+         alt="Orangy Design">
+    <div class="footer__bottom-links">
+      <a href="#" class="footer__bottom-link footer__bottom-link--orange">Privacy policy :</a>
+      <a href="#" class="footer__bottom-link">Terms of use :</a>
+      <span class="footer__copy">© 2026 Orangy Design LLP</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="portfolio.js"></script>
+<script id="cta-dome-script">
+(function () {
+  const canvas = document.getElementById('cta-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, rot = 0;
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  new ResizeObserver(resize).observe(canvas.parentElement);
+  resize();
+  const MERIDIANS = 30, RINGS = 14;
+  function frame() {
+    requestAnimationFrame(frame);
+    if (!W || !H) return;
+    ctx.clearRect(0, 0, W, H);
+    const cx = W / 2, vy = H * -0.6, byC = H * 1.08, bR = W * 0.92;
+    for (let i = 0; i < MERIDIANS; i++) {
+      const a = (i / MERIDIANS) * Math.PI * 2 + rot;
+      const bx = cx + Math.cos(a) * bR, by = byC - Math.sin(a) * H * 0.06;
+      const t = (Math.cos(a) + 1) * 0.5, al = 0.12 + 0.55 * t;
+      ctx.strokeStyle = `rgba(210,45,25,${al})`; ctx.lineWidth = 0.6 + t * 0.9;
+      ctx.shadowBlur = t > 0.5 ? 7 : 2; ctx.shadowColor = 'rgba(255,55,20,0.45)';
+      ctx.beginPath(); ctx.moveTo(cx, vy); ctx.lineTo(bx, by); ctx.stroke();
+    }
+    ctx.shadowBlur = 2; ctx.lineWidth = 0.7;
+    for (let j = 1; j <= RINGS; j++) {
+      const t = j / RINGS, y = vy + (byC - vy) * t, rx = bR * t, ry = rx * 0.13;
+      if (y < -ry - 4 || y > H + ry + 4) continue;
+      const al = 0.08 + 0.22 * t;
+      ctx.strokeStyle = `rgba(210,45,25,${al})`; ctx.shadowColor = `rgba(255,55,20,${al * 0.6})`;
+      ctx.beginPath(); ctx.ellipse(cx, y, rx, ry, 0, 0, Math.PI * 2); ctx.stroke();
+    }
+    rot += 0.0004;
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

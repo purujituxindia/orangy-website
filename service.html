@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Orangy Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="icon" href="Assets/META LOGO.svg">
+</head>
+<body>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" aria-hidden="true">
+  <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="studio.html">Studio</a>
+  <a href="service.html" class="mobile-nav__active">Service</a>
+  <a href="portfolio.html">Works</a>
+  <a href="contact.html" class="mobile-nav__cta">Let's Connect</a>
+</div>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+<nav class="navbar service-navbar">
+  <a href="index.html"><img class="navbar__logo"
+       src="Assets/Orangy-logo-white-bg-orange-icon.svg"
+       alt="Orangy Design"></a>
+  <div class="navbar__nav">
+    <a href="studio.html">Studio</a>
+    <a href="service.html" class="navbar__nav--active">Service</a>
+    <a href="portfolio.html">Works</a>
+  </div>
+  <a href="contact.html" class="navbar__cta">Let's Connect</a>
+  <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- =========================================
+     SERVICE HERO
+========================================= -->
+<section class="svc-hero reveal">
+  <h1 class="svc-hero__heading">
+    Your Product's Success Starts With<br>
+    Great UX
+  </h1>
+  <p class="svc-hero__sub">
+    We partner with ambitious companies to create digital products that users love and businesses thrive on. Our comprehensive approach covers every stage of your product journey, from initial discovery to sustainable growth.
+  </p>
+</section>
+
+
+<!-- =========================================
+     SERVICE SECTIONS
+========================================= -->
+<div class="svc-sections">
+
+  <!-- Research -->
+  <div class="svc-section svc-section--research reveal">
+    <canvas class="svc-section__orb-canvas" id="svc-orb-research" aria-hidden="true"></canvas>
+    <div class="svc-section__info">
+      <h2 class="svc-section__title">Research</h2>
+      <p class="svc-section__desc">
+        Uncover What Really Matters. Great design starts with deep understanding. We dig into your users' needs, behaviors, and pain points to build products on solid foundations, not assumptions.
+      </p>
+    </div>
+    <div class="svc-section__tags">
+      <div class="svc-tags-col">
+        <div class="svc-tag">Project Definition</div>
+        <div class="svc-tag">Research &amp; Analysis</div>
+        <div class="svc-tag">Accessibility Audit</div>
+      </div>
+      <div class="svc-tags-col">
+        <div class="svc-tag">Competitive Analysis</div>
+        <div class="svc-tag">User Interviews</div>
+        <div class="svc-tag">Heuristic Evaluation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design -->
+  <div class="svc-section svc-section--alt svc-section--design reveal">
+    <canvas class="svc-section__orb-canvas" id="svc-orb-design" aria-hidden="true"></canvas>
+    <div class="svc-section__info">
+      <h2 class="svc-section__title">Design</h2>
+      <p class="svc-section__desc">
+        Craft Experiences That Convert. We transform research insights into beautiful, functional designs that solve real problems. Every interface element serves a purpose, every interaction moves users closer to their goals.
+      </p>
+    </div>
+    <div class="svc-section__tags">
+      <div class="svc-tags-col">
+        <div class="svc-tag">Information Architecture</div>
+        <div class="svc-tag">Accessibility Audit</div>
+        <div class="svc-tag">Interaction Design</div>
+      </div>
+      <div class="svc-tags-col">
+        <div class="svc-tag">Prototyping</div>
+        <div class="svc-tag">Wireframing</div>
+        <div class="svc-tag">Visual Design</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scaling -->
+  <div class="svc-section svc-section--scaling reveal">
+    <canvas class="svc-section__orb-canvas" id="svc-orb-scaling" aria-hidden="true"></canvas>
+    <div class="svc-section__info">
+      <h2 class="svc-section__title">Scaling</h2>
+      <p class="svc-section__desc">
+        Grow Without Breaking. Scaling isn't just about handling more users—it's about maintaining exceptional experiences as you grow. We help you build systems and processes that support sustainable expansion.
+      </p>
+    </div>
+    <div class="svc-section__tags">
+      <div class="svc-tags-col">
+        <div class="svc-tag">Usability Testing</div>
+        <div class="svc-tag">Design System Development</div>
+      </div>
+      <div class="svc-tags-col">
+        <div class="svc-tag">Development Handoff</div>
+        <div class="svc-tag">Post-launch Evaluation</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     INDUSTRY WE WORK
+========================================= -->
+<section class="svc-industry reveal">
+  <h2 class="svc-industry__title"><strong>Industry we work</strong></h2>
+  <p class="svc-industry__sub">Simplicity in design comes from removing the unnecessary, allowing the essential to shine.</p>
+
+  <div class="svc-industry__grid">
+    <a class="svc-industry-cell" href="portfolio.html?filter=healthcare">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/healthcare.png" alt="Healthcare">
+      <span class="svc-industry-cell__label">Healthcare</span>
+      <span class="svc-industry-cell__count">45+ Projects</span>
+    </a>
+    <a class="svc-industry-cell" href="portfolio.html?filter=edtech">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/EdTech UX.png" alt="EdTech UX">
+      <span class="svc-industry-cell__label">EdTech UX</span>
+      <span class="svc-industry-cell__count">25+ Projects</span>
+    </a>
+    <a class="svc-industry-cell" href="portfolio.html?filter=ai">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/Design for AI.png" alt="Design for AI">
+      <span class="svc-industry-cell__label">Design for AI</span>
+      <span class="svc-industry-cell__count">10+ Projects</span>
+    </a>
+    <a class="svc-industry-cell" href="portfolio.html?filter=iot">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/UX for IoT.png" alt="UX for IoT">
+      <span class="svc-industry-cell__label">UX for IoT</span>
+      <span class="svc-industry-cell__count">20+ Projects</span>
+    </a>
+    <a class="svc-industry-cell" href="portfolio.html?filter=enterprise">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/Enterprise UX.png" alt="Enterprise UX">
+      <span class="svc-industry-cell__label">Enterprise UX</span>
+      <span class="svc-industry-cell__count">30+ Projects</span>
+    </a>
+    <a class="svc-industry-cell" href="portfolio.html?filter=retail">
+      <img class="svc-industry-cell__icon" src="Assets/Studio/Retail UX.png" alt="Retail UX">
+      <span class="svc-industry-cell__label">Retail UX</span>
+      <span class="svc-industry-cell__count">15+ Projects</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- =========================================
+     CLIENTS BAR
+========================================= -->
+<section class="clients svc-clients reveal">
+  <div class="clients__ticker">
+    <div class="clients__track">
+      <img class="clients__logo" src="Assets/Doers-tech.svg" alt="Doers Tech">
+      <img class="clients__logo" src="Assets/Edu-tive 1.svg" alt="Edu-tive">
+      <img class="clients__logo" src="Assets/Asian 1.svg" alt="Asian">
+      <img class="clients__logo" src="Assets/korakkar 1.svg" alt="Korakkar">
+      <img class="clients__logo" src="Assets/Maxbyte 1.svg" alt="Maxbyte">
+      <img class="clients__logo" src="Assets/Petrus 1.svg" alt="Petrus">
+      <img class="clients__logo" src="Assets/noqstore.svg" alt="NOQstore">
+      <img class="clients__logo" src="Assets/GRL 1.svg" alt="GRL">
+      <img class="clients__logo" src="Assets/Examly 1.svg" alt="Examly">
+      <img class="clients__logo" src="Assets/apdeopstechnologies 1.svg" alt="iCliniq">
+      <img class="clients__logo" src="Assets/Doers-tech.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/Edu-tive 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/Asian 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/korakkar 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/Maxbyte 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/Petrus 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/noqstore.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/GRL 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/Examly 1.svg" alt="" aria-hidden="true">
+      <img class="clients__logo" src="Assets/apdeopstechnologies 1.svg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+     STATS BAR
+========================================= -->
+<section class="svc-stats reveal">
+  <div class="svc-stat">
+    <span class="svc-stat__num">10+</span>
+    <span class="svc-stat__label">Years in Design</span>
+  </div>
+  <div class="svc-stat">
+    <span class="svc-stat__num">160+</span>
+    <span class="svc-stat__label">Clients</span>
+  </div>
+  <div class="svc-stat">
+    <span class="svc-stat__num">450+</span>
+    <span class="svc-stat__label">Projects</span>
+  </div>
+  <div class="svc-stat">
+    <span class="svc-stat__num">10+</span>
+    <span class="svc-stat__label">Industries</span>
+  </div>
+</section>
+
+
+<!-- =========================================
+     WORKS
+========================================= -->
+<section class="works svc-works reveal">
+  <div class="works__header">
+    <h2 class="section-title">Our <strong>Proud</strong> Works</h2>
+    <a href="portfolio.html" class="works__view-all">View all</a>
+  </div>
+
+  <div class="works__grid">
+    <a href="casestudy-adhiban.html" class="work-card">
+      <div class="work-card__img-wrap work-card__img-wrap--tall">
+        <img class="work-card__img"
+             src="Assets/Portfolio/Adhiban.png"
+             alt="Adhiban app screenshot">
+      </div>
+      <div class="work-card__info">
+        <div class="work-card__row">
+          <span class="work-card__title">Adhiban</span>
+          <span class="work-card__tag">Fintech</span>
+        </div>
+        <p class="work-card__desc">Empowering Financial Growth with Intelligent Solutions Empowering Financial Growth with Intelligent Solutions</p>
+        <div class="work-card__hashtags">
+          <span>#MobileApp</span>
+          <span>#ProductDesign</span>
+          <span>#ExperienceDesign</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="works__right">
+      <div class="work-card">
+        <div class="work-card__img-wrap work-card__img-wrap--short work-card__img-wrap--pink">
+          <img class="work-card__img"
+               src="Assets/Portfolio/NoQ.png"
+               alt="NoQstore app screenshot"
+               style="object-position: center;">
+        </div>
+        <div class="work-card__info">
+          <div class="work-card__row work-card__row--top">
+            <div>
+              <div class="work-card__title">NoQstore</div>
+              <p class="work-card__desc">Redefining Retail Through Seamless Experiences Redefining Retail Through Seamless Experiences</p>
+            </div>
+            <span class="work-card__tag">Retail</span>
+          </div>
+          <div class="work-card__hashtags">
+            <span>#UXforIoT</span>
+            <span>#ProductDesign</span>
+            <span>#ExperienceDesign</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card__img-wrap work-card__img-wrap--short">
+          <img class="work-card__img"
+               src="Assets/Portfolio/SDL.png"
+               alt="SDL app screenshot">
+        </div>
+        <div class="work-card__info">
+          <div class="work-card__row">
+            <span class="work-card__title">SDL</span>
+            <span class="work-card__tag">Healthcare</span>
+          </div>
+          <p class="work-card__desc">Designing reliable interfaces for modern laboratories Designing reliable interfaces for modern laboratories</p>
+          <div class="work-card__hashtags">
+            <span>#MobileApp</span>
+            <span>#ProductDesign</span>
+            <span>#ExperienceDesign</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+<section class="svc-cta reveal">
+  <canvas id="cta-canvas" class="svc-cta__canvas" aria-hidden="true"></canvas>
+  <div class="svc-cta__content">
+    <div class="svc-cta__heading">
+      <span class="svc-cta__heading-light">Need a design partner who delivers?</span><br>
+      <span class="svc-cta__heading-accent">Reach out to us.</span>
+    </div>
+    <p class="svc-cta__sub">We're selective about the projects we take on. Which means the ones we do, we do well.</p>
+    <a href="mailto:hello@orangy.design" class="svc-cta__btn">Contact Us</a>
+  </div>
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
+  <img class="footer__bg-icon"
+       src="https://www.figma.com/api/mcp/asset/1d39d39c-9806-4713-a4d0-8587605a2789"
+       alt="" aria-hidden="true">
+
+  <div class="footer__top">
+    <div class="footer__left">
+      <nav class="footer__nav">
+        <a href="index.html">Home</a>
+        <a href="studio.html">Studio</a>
+        <a href="service.html" class="footer__nav-active">Service</a>
+        <a href="portfolio.html">Works</a>
+        <a href="contact.html">Lets Talk</a>
+      </nav>
+      <div class="footer__socials">
+        <a href="#" aria-label="LinkedIn" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" class="footer__social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__right">
+      <div>
+        <div class="footer__tagline">Lets Talk about <span>Good&nbsp;&nbsp;UX,</span></div>
+        <div class="footer__email">hello@orangy.design</div>
+      </div>
+      <div class="footer__phone">
+        <img class="footer__phone-icon"
+             src="Assets/whatsapp-svgrepo-com 1.svg"
+             alt="WhatsApp">
+        <span>+91 900 357 8010</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <img class="footer__logo"
+         src="Assets/Orangy-logo-footer-icon.svg"
+         alt="Orangy Design">
+    <div class="footer__bottom-links">
+      <a href="#" class="footer__bottom-link footer__bottom-link--orange">Privacy policy :</a>
+      <a href="#" class="footer__bottom-link">Terms of use :</a>
+      <span class="footer__copy">© 2026 Orangy Design LLP</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const CONFIGS = [
+    {
+      id: 'svc-orb-research',
+      orbs: [
+        { nx:.15, ny:.25, nx2:.70, ny2:.75, sp:.08, ph:0.0, r:.55, h:18,  s:90, l:70 },
+        { nx:.75, ny:.55, nx2:.25, ny2:.80, sp:.06, ph:2.1, r:.50, h:28,  s:80, l:72 },
+        { nx:.50, ny:.70, nx2:.55, ny2:.40, sp:.10, ph:3.8, r:.45, h:10,  s:85, l:68 },
+        { nx:.85, ny:.20, nx2:.15, ny2:.65, sp:.07, ph:1.4, r:.40, h:35,  s:75, l:74 },
+      ]
+    },
+    {
+      id: 'svc-orb-design',
+      orbs: [
+        { nx:.20, ny:.30, nx2:.75, ny2:.70, sp:.09, ph:0.5, r:.55, h:248, s:65, l:68 },
+        { nx:.72, ny:.60, nx2:.28, ny2:.40, sp:.07, ph:2.5, r:.50, h:265, s:58, l:72 },
+        { nx:.45, ny:.75, nx2:.55, ny2:.25, sp:.11, ph:4.0, r:.45, h:232, s:70, l:64 },
+        { nx:.88, ny:.15, nx2:.12, ny2:.60, sp:.08, ph:1.8, r:.42, h:278, s:55, l:76 },
+      ]
+    },
+    {
+      id: 'svc-orb-scaling',
+      orbs: [
+        { nx:.18, ny:.28, nx2:.72, ny2:.72, sp:.08, ph:0.2, r:.55, h:148, s:55, l:60 },
+        { nx:.78, ny:.58, nx2:.22, ny2:.42, sp:.06, ph:2.3, r:.50, h:162, s:50, l:64 },
+        { nx:.48, ny:.72, nx2:.52, ny2:.28, sp:.10, ph:3.6, r:.45, h:135, s:60, l:58 },
+        { nx:.85, ny:.18, nx2:.15, ny2:.62, sp:.07, ph:1.6, r:.42, h:172, s:45, l:66 },
+      ]
+    }
+  ];
+
+  CONFIGS.forEach(({ id, orbs }) => {
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = canvas.parentElement;
+    let W, H;
+    function resize() {
+      const rect = section.getBoundingClientRect();
+      W = rect.width; H = rect.height;
+      canvas.width  = W * devicePixelRatio;
+      canvas.height = H * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+    }
+    new ResizeObserver(resize).observe(section);
+    resize();
+    let t = 0;
+    function tick() {
+      ctx.clearRect(0, 0, W, H);
+      t += 0.004;
+      for (const o of orbs) {
+        const cx = W * (o.nx + Math.sin(t * o.sp + o.ph)           * (o.nx2 - o.nx) * 0.8);
+        const cy = H * (o.ny + Math.cos(t * o.sp * 0.7 + o.ph + 1) * (o.ny2 - o.ny) * 0.8);
+        const r  = o.r * Math.min(W, H) * 0.9;
+        const gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+        const a0 = 0.58;
+        gr.addColorStop(0,    `hsla(${o.h},${o.s}%,${o.l}%,${a0})`);
+        gr.addColorStop(0.25, `hsla(${o.h},${o.s}%,${o.l}%,${a0 * 0.60})`);
+        gr.addColorStop(0.55, `hsla(${o.h},${o.s}%,${o.l}%,${a0 * 0.25})`);
+        gr.addColorStop(0.80, `hsla(${o.h},${o.s}%,${o.l}%,${a0 * 0.07})`);
+        gr.addColorStop(1,    `hsla(${o.h},${o.s}%,${o.l}%,0)`);
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.fillStyle = gr;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  });
+})();
+</script>
+<script src="service.js"></script>
+<script id="cta-dome-script">
+(function () {
+  const canvas = document.getElementById('cta-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, rot = 0;
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  new ResizeObserver(resize).observe(canvas.parentElement);
+  resize();
+  const MERIDIANS = 30, RINGS = 14;
+  function frame() {
+    requestAnimationFrame(frame);
+    if (!W || !H) return;
+    ctx.clearRect(0, 0, W, H);
+    const cx = W / 2, vy = H * -0.6, byC = H * 1.08, bR = W * 0.92;
+    for (let i = 0; i < MERIDIANS; i++) {
+      const a = (i / MERIDIANS) * Math.PI * 2 + rot;
+      const bx = cx + Math.cos(a) * bR, by = byC - Math.sin(a) * H * 0.06;
+      const t = (Math.cos(a) + 1) * 0.5, al = 0.12 + 0.55 * t;
+      ctx.strokeStyle = `rgba(210,45,25,${al})`; ctx.lineWidth = 0.6 + t * 0.9;
+      ctx.shadowBlur = t > 0.5 ? 7 : 2; ctx.shadowColor = 'rgba(255,55,20,0.45)';
+      ctx.beginPath(); ctx.moveTo(cx, vy); ctx.lineTo(bx, by); ctx.stroke();
+    }
+    ctx.shadowBlur = 2; ctx.lineWidth = 0.7;
+    for (let j = 1; j <= RINGS; j++) {
+      const t = j / RINGS, y = vy + (byC - vy) * t, rx = bR * t, ry = rx * 0.13;
+      if (y < -ry - 4 || y > H + ry + 4) continue;
+      const al = 0.08 + 0.22 * t;
+      ctx.strokeStyle = `rgba(210,45,25,${al})`; ctx.shadowColor = `rgba(255,55,20,${al * 0.6})`;
+      ctx.beginPath(); ctx.ellipse(cx, y, rx, ry, 0, 0, Math.PI * 2); ctx.stroke();
+    }
+    rot += 0.0004;
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

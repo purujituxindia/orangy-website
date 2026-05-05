@@ -1,0 +1,322 @@
+/* ===========================
+   CONTACT NAVBAR
+=========================== */
+.contact-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* ===========================
+   CONTACT HERO
+=========================== */
+.contact-hero {
+  padding: calc(var(--pad) + 80px) var(--pad) var(--pad);
+}
+
+.contact-hero__text {
+  max-width: min(65vw, 1248px);
+  display: flex;
+  flex-direction: column;
+  gap: min(0.625vw, 12px);
+}
+
+.contact-hero__heading {
+  font-size: var(--fs-80);
+  font-weight: 300;
+  line-height: 1.246;
+  color: var(--black);
+}
+
+.contact-hero__heading strong {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.contact-hero__sub {
+  font-size: var(--fs-32);
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--black);
+}
+
+/* ===========================
+   CONTACT CARDS
+=========================== */
+.contact-cards {
+  padding: 0 var(--pad);
+}
+
+.contact-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: min(1.042vw, 20px);
+}
+
+.contact-card {
+  background: var(--neutral-100);
+  border-radius: var(--r-card);
+  padding: min(2.083vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+  justify-content: center;
+}
+
+.contact-card--schedule { background: rgba(242,245,249,0.6); }
+.contact-card--whatsapp { background: rgba(244,255,241,0.6); }
+.contact-card--email    { background: rgba(253,232,232,0.6); }
+
+.contact-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.417vw, 8px);
+}
+
+.contact-card__title {
+  font-size: var(--fs-40);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.25;
+  white-space: pre;
+}
+
+.contact-card__desc {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: #616161;
+  line-height: 1.4;
+}
+
+.contact-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.417vw, 8px);
+  background: var(--brand);
+  color: var(--white);
+  font-size: var(--fs-20);
+  font-weight: 700;
+  padding: min(0.625vw, 12px) min(0.833vw, 16px);
+  border-radius: 4px;
+  transition: opacity 0.2s;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.contact-card__btn:hover { opacity: 0.88; color: var(--white); }
+
+.contact-card__btn-icon {
+  width: min(1.667vw, 32px);
+  height: min(1.667vw, 32px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   UX AUDIT FORM SECTION
+=========================== */
+.audit {
+  padding: var(--pad);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Left — black panel */
+.audit__left {
+  background: var(--black);
+  color: var(--white);
+  border-radius: var(--r-card) 0 0 var(--r-card);
+  padding: min(2.5vw, 48px);
+  width: min(25vw, 480px);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: min(2.917vw, 56px);
+}
+
+.audit__left-heading {
+  font-size: var(--fs-40);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.audit__left-heading strong {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.audit__list {
+  list-style: disc;
+  padding-left: min(1.563vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+  font-size: var(--fs-20);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+
+/* Right — form panel */
+.audit__right {
+  flex: 1;
+  background: var(--neutral-100);
+  border-radius: 0 var(--r-card) var(--r-card) 0;
+  padding: min(3.333vw, 64px) min(2.5vw, 48px);
+}
+
+/* Form */
+.audit-form {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+}
+
+.audit-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: min(2.083vw, 40px);
+}
+
+.audit-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.625vw, 12px);
+}
+
+.audit-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.audit-form__label {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: var(--black);
+}
+
+.audit-form__input {
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-radius: min(0.417vw, 8px);
+  padding: min(0.833vw, 16px);
+  font-size: var(--fs-20);
+  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  color: var(--black);
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.audit-form__input::placeholder { color: #797979; }
+
+.audit-form__input:focus {
+  border-color: var(--brand);
+}
+
+.audit-form__textarea {
+  resize: vertical;
+  min-height: min(7.292vw, 140px);
+}
+
+.audit-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: min(3.542vw, 68px);
+  margin-top: min(0.417vw, 8px);
+}
+
+.audit-form__notice {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: var(--black);
+}
+
+.audit-form__notice strong {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.audit-form__submit {
+  background: var(--brand);
+  color: var(--white);
+  font-size: var(--fs-24);
+  font-weight: 700;
+  font-family: 'Manrope', sans-serif;
+  padding: min(0.625vw, 12px) min(1.667vw, 32px);
+  border-radius: min(0.417vw, 8px);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.audit-form__submit:hover { opacity: 0.88; }
+
+/* Success state */
+.audit-form__success {
+  display: none;
+  text-align: center;
+  padding: min(3.333vw, 64px) 0;
+  font-size: var(--fs-32);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+.audit-form__success strong { color: var(--brand); font-weight: 700; }
+
+/* ===========================
+   RESPONSIVE — TABLET 900px
+=========================== */
+@media (max-width: 900px) {
+  .contact-hero__text { max-width: 100%; }
+
+  .contact-cards__grid { grid-template-columns: 1fr; }
+
+  .audit {
+    flex-direction: column;
+  }
+  .audit__left {
+    width: 100%;
+    border-radius: var(--r-card) var(--r-card) 0 0;
+  }
+  .audit__right {
+    border-radius: 0 0 var(--r-card) var(--r-card);
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE 600px
+=========================== */
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: calc(var(--pad) + 60px) var(--pad) var(--pad);
+  }
+
+  .contact-hero__heading { white-space: normal; }
+
+  .contact-card__title { white-space: normal; }
+
+  .audit-form__row {
+    grid-template-columns: 1fr;
+    gap: var(--gap-sm);
+  }
+
+  .audit-form__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .audit-form__submit { width: 100%; text-align: center; }
+
+  .audit__left { gap: 28px; }
+}

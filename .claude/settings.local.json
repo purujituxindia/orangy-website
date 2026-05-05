@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__dad24f5e-4bca-482a-92b9-56a114b68850__get_design_context",
+      "mcp__dad24f5e-4bca-482a-92b9-56a114b68850__get_screenshot",
+      "mcp__dad24f5e-4bca-482a-92b9-56a114b68850__get_metadata",
+      "Bash(python3 -c ':*)",
+      "Bash(python3)",
+      "Bash(python -c \"import graphify\")",
+      "Bash(pip install:*)",
+      "Bash(python -c \"import sys; open\\('.graphify_python', 'w'\\).write\\(sys.executable\\)\")",
+      "Bash(python -c \"import graphify; print\\('ok'\\)\")",
+      "Bash(python -c \"import sys; open\\('.graphify_python', 'w'\\).write\\(sys.executable\\); print\\(sys.executable\\)\")",
+      "Bash(python -c ':*)",
+      "Bash(mkdir -p graphify-out)",
+      "Bash(rm -f .graphify_detect.json .graphify_extract.json .graphify_ast.json .graphify_semantic.json .graphify_analysis.json .graphify_labels.json .graphify_cached.json .graphify_uncached.txt .graphify_semantic_new.json .graphify_python)",
+      "Bash(grep -v \"^$\")",
+      "mcp__dad24f5e-4bca-482a-92b9-56a114b68850__use_figma",
+      "Bash(python3 -c ' *)",
+      "Bash(Select-Object Name)",
+      "PowerShell(Get-ChildItem \"d:\\\\Orangy website\\\\Assets\" | ForEach-Object { $_.Name })"
+    ]
+  }
+}
