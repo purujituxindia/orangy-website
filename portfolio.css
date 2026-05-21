@@ -244,6 +244,22 @@
   border-radius: var(--r-tag);
   white-space: nowrap;
   flex-shrink: 0;
+}
+.pf-card__impact {
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.313vw, 6px);
+  background: rgba(255, 80, 35, 0.07);
+  border: 1px solid rgba(255, 80, 35, 0.18);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: var(--fs-20);
+  padding: min(0.313vw, 6px) min(0.833vw, 16px);
+  border-radius: var(--r-tag);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   align-self: flex-start;
 }
 

@@ -1,0 +1,271 @@
+/* =========================================
+   PRIVACY NAVBAR
+========================================= */
+.privacy-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   PRIVACY HERO
+========================================= */
+.privacy-hero {
+  padding: calc(var(--pad) + 120px) var(--pad) min(3vw, 60px);
+  background: linear-gradient(180deg, var(--brand-light) 0%, rgba(255,255,255,0) 100%);
+  text-align: left;
+}
+
+.privacy-hero__content {
+  max-width: min(65vw, 1248px);
+  display: flex;
+  flex-direction: column;
+  gap: min(0.625vw, 12px);
+}
+
+.privacy-hero__heading {
+  font-size: var(--fs-80);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.privacy-hero__heading strong {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.privacy-hero__sub {
+  font-size: var(--fs-32);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   PRIVACY LAYOUT CONTAINER
+========================================= */
+.privacy-container {
+  padding: 0 var(--pad) var(--pad);
+}
+
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: min(5vw, 96px);
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Sidebar Table of Contents */
+.privacy-sidebar {
+  position: sticky;
+  top: 120px;
+  padding-right: 20px;
+}
+
+.privacy-toc ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toc-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-gray);
+  padding: 6px 12px;
+  border-left: 2px solid #E0E0E0;
+  display: block;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.toc-link:hover {
+  color: var(--brand);
+  border-left-color: var(--brand);
+  padding-left: 16px;
+}
+
+.toc-link.active {
+  color: var(--brand);
+  border-left-color: var(--brand);
+  font-weight: 700;
+  padding-left: 16px;
+}
+
+/* Privacy Content */
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: min(4vw, 80px);
+  color: var(--text-body);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.privacy-section {
+  scroll-margin-top: 120px; /* Offset for smooth scroll positioning */
+}
+
+.privacy-section h2 {
+  font-size: var(--fs-48);
+  font-weight: 300;
+  color: var(--black);
+  margin-bottom: min(1vw, 20px);
+  line-height: 1.25;
+}
+
+.privacy-section h2 strong {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.privacy-lead {
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--black);
+  font-weight: 400;
+}
+
+.privacy-section p {
+  margin-bottom: 20px;
+}
+
+/* Info Cards */
+.privacy-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.privacy-info-card {
+  background: var(--neutral-100);
+  border-radius: var(--r-card);
+  padding: 30px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.privacy-info-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.privacy-info-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.privacy-info-card li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.privacy-info-card li::before {
+  content: "•";
+  color: var(--brand);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Bullet list styling */
+.privacy-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.privacy-bullet-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.privacy-bullet-list li::before {
+  content: "→";
+  color: var(--brand);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+/* Highlight boxes */
+.privacy-note {
+  font-size: 16px;
+  color: var(--text-gray);
+  font-style: italic;
+}
+
+.privacy-highlight {
+  background: var(--brand-light);
+  color: var(--brand);
+  padding: 20px 24px;
+  border-radius: var(--r-card);
+  font-weight: 600;
+  border-left: 4px solid var(--brand);
+  margin: 24px 0;
+}
+
+.privacy-warning {
+  background: #FFF9E6;
+  color: #8A6D3B;
+  padding: 20px 24px;
+  border-radius: var(--r-card);
+  border-left: 4px solid #F0AD4E;
+  margin: 24px 0;
+}
+
+/* Contact Button */
+.privacy-contact-btn {
+  display: inline-block;
+  background: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--r-btn);
+  margin-top: 16px;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+.privacy-contact-btn:hover {
+  opacity: 0.9;
+  color: var(--white);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 992px) {
+  .privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .privacy-sidebar {
+    display: none; /* Hide TOC on tablets and mobiles for cleaner layout */
+  }
+
+  .privacy-hero {
+    padding: calc(var(--pad) + 100px) var(--pad) 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacy-card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
