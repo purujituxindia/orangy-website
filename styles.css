@@ -1603,42 +1603,58 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
   padding: 0;
 }
+/* Individual brand styles by default */
+.summary-section__btn--claude {
+  border-color: #D97756;
+  background: #D97756;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(217, 119, 86, 0.2);
+}
+.summary-section__btn--chatgpt {
+  border-color: #10A37F;
+  background: #10A37F;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(16, 163, 127, 0.2);
+}
+.summary-section__btn--perplexity {
+  border-color: #39C0C8;
+  background: #39C0C8;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(57, 192, 200, 0.2);
+}
+.summary-section__btn--googleai {
+  border-color: #9B72CB;
+  background: #9B72CB;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(155, 114, 203, 0.2);
+}
+
 .summary-section__btn svg {
   width: clamp(20px, 1.5vw, 28px);
   height: clamp(20px, 1.5vw, 28px);
   transition: transform 0.3s ease;
 }
 .summary-section__btn:hover {
-  color: var(--white); /* Turns white when brand color background triggers */
+  color: var(--white);
   transform: translateY(-4px);
+  filter: brightness(1.08);
 }
 .summary-section__btn:hover svg {
   transform: scale(1.1);
 }
+
 /* Individual brand hover styles */
 .summary-section__btn--claude:hover {
-  border-color: #D97756;
-  background: #D97756;
-  color: var(--white);
-  box-shadow: 0 8px 24px rgba(217, 119, 86, 0.3);
+  box-shadow: 0 8px 24px rgba(217, 119, 86, 0.4);
 }
 .summary-section__btn--chatgpt:hover {
-  border-color: #10A37F;
-  background: #10A37F;
-  color: var(--white);
-  box-shadow: 0 8px 24px rgba(16, 163, 127, 0.3);
+  box-shadow: 0 8px 24px rgba(16, 163, 127, 0.4);
 }
 .summary-section__btn--perplexity:hover {
-  border-color: #39C0C8;
-  background: #39C0C8;
-  color: var(--white);
-  box-shadow: 0 8px 24px rgba(57, 192, 200, 0.3);
+  box-shadow: 0 8px 24px rgba(57, 192, 200, 0.4);
 }
 .summary-section__btn--googleai:hover {
-  border-color: #9B72CB;
-  background: #9B72CB;
-  color: var(--white);
-  box-shadow: 0 8px 24px rgba(155, 114, 203, 0.3);
+  box-shadow: 0 8px 24px rgba(155, 114, 203, 0.4);
 }
 
 /* Sleek Glassmorphism Toast Notification */
