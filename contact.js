@@ -97,7 +97,7 @@
     // Show inline confirmation
     var notice = form.querySelector('.audit-form__notice');
     var submit = form.querySelector('.audit-form__submit');
-    if (notice) notice.textContent = 'Thanks! We\'ll be in touch within 24–48 hrs.';
+    if (notice) notice.textContent = 'Thanks! We\'ll be in touch within 4–8 hours.';
     if (submit) { submit.textContent = 'Sent!'; submit.disabled = true; }
   });
 })();

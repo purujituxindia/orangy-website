@@ -453,3 +453,120 @@ document.querySelectorAll('.faq-item__header').forEach(function(header) {
     }
   });
 });
+
+// Hero Section Carousel
+(function() {
+  var container = document.querySelector('.hero-carousel');
+  if (!container) return;
+
+  var slides = container.querySelectorAll('.hero-carousel__slide');
+  var dots = container.querySelectorAll('.hero-carousel__dot');
+  var prevBtn = container.querySelector('.hero-carousel__nav--left');
+  var nextBtn = container.querySelector('.hero-carousel__nav--right');
+  var progressBar = container.querySelector('.hero-carousel__progress-bar');
+  
+  var currentIdx = 0;
+  var slideDuration = 6000; // 6 seconds per slide
+  var animationFrameId = null;
+  var startTime = null;
+  var elapsedBeforePause = 0;
+  var isPaused = false;
+
+  function showSlide(idx) {
+    slides.forEach(function(slide, i) {
+      slide.classList.toggle('active', i === idx);
+    });
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('active', i === idx);
+    });
+    currentIdx = idx;
+    resetProgressBar();
+  }
+
+  function nextSlide() {
+    var nextIdx = (currentIdx + 1) % slides.length;
+    showSlide(nextIdx);
+  }
+
+  function prevSlide() {
+    var prevIdx = (currentIdx - 1 + slides.length) % slides.length;
+    showSlide(prevIdx);
+  }
+
+  function animateProgressBar(timestamp) {
+    if (!startTime) startTime = timestamp;
+    
+    var elapsed = timestamp - startTime + elapsedBeforePause;
+    
+    if (elapsed >= slideDuration) {
+      nextSlide();
+      return;
+    }
+
+    var progressPct = (elapsed / slideDuration) * 100;
+    progressBar.style.width = progressPct + '%';
+
+    if (!isPaused) {
+      animationFrameId = requestAnimationFrame(animateProgressBar);
+    }
+  }
+
+  function startAutoplay() {
+    isPaused = false;
+    startTime = null;
+    animationFrameId = requestAnimationFrame(animateProgressBar);
+  }
+
+  function pauseAutoplay() {
+    isPaused = true;
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+    if (startTime) {
+      elapsedBeforePause += performance.now() - startTime;
+    }
+  }
+
+  function resetProgressBar() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+    progressBar.style.width = '0%';
+    elapsedBeforePause = 0;
+    startTime = null;
+    if (!isPaused) {
+      startAutoplay();
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      prevSlide();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      nextSlide();
+    });
+  }
+
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() {
+      showSlide(i);
+    });
+  });
+
+  container.addEventListener('mouseenter', function() {
+    pauseAutoplay();
+  });
+
+  container.addEventListener('mouseleave', function() {
+    isPaused = false;
+    startTime = performance.now();
+    animationFrameId = requestAnimationFrame(animateProgressBar);
+  });
+
+  // Init
+  showSlide(0);
+})();
