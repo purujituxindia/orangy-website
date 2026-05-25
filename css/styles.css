@@ -832,10 +832,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--brand);
   display: flex;
   align-items: center;
-  gap: 0;
-  transition: gap 0.35s ease, transform 0.35s ease;
+  gap: min(0.417vw, 8px);
+  transition: transform 0.35s ease;
 }
-/* the dot — hidden by default */
+/* the dot — always visible */
 .process-card__label::before {
   content: '';
   display: block;
@@ -843,18 +843,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 6px;
   border-radius: 50%;
   background: var(--brand);
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
   flex-shrink: 0;
 }
 .process-card:hover .process-card__label {
-  gap: min(0.417vw, 8px);
   transform: translateY(-3px);
-}
-.process-card:hover .process-card__label::before {
-  opacity: 1;
-  transform: scale(1);
 }
 
 /* ── title: slides up smoothly ── */
