@@ -309,18 +309,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-carousel__overlay {
   position: absolute;
-  bottom: clamp(20px, 2.083vw, 40px);
-  left: clamp(20px, 2.083vw, 40px);
+  bottom: clamp(16px, 1.667vw, 32px);
+  right: clamp(16px, 1.667vw, 32px);
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: clamp(16px, 1.458vw, 28px) clamp(20px, 1.875vw, 36px);
-  border-radius: min(1.042vw, 20px);
-  max-width: min(44.271vw, 850px);
-  width: calc(100% - clamp(40px, 4.167vw, 80px));
+  padding: clamp(12px, 1.042vw, 20px) clamp(16px, 1.25vw, 24px);
+  border-radius: min(0.833vw, 16px);
+  max-width: min(24vw, 380px);
+  width: auto;
   z-index: 5;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   transform: translateY(24px);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s, opacity 0.8s ease 0.3s;
@@ -333,18 +333,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-block;
   background: var(--brand);
   color: var(--white);
-  font-size: var(--fs-18);
+  font-size: min(0.625vw, 12px);
   font-weight: 700;
-  padding: min(0.313vw, 6px) min(0.833vw, 16px);
+  padding: min(0.208vw, 4px) min(0.625vw, 12px);
   border-radius: var(--r-pill);
-  margin-bottom: min(0.625vw, 12px);
+  margin-bottom: min(0.417vw, 8px);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 .hero-carousel__impact {
-  font-size: clamp(18px, 1.458vw, 28px);
-  font-weight: 600;
-  line-height: 1.35;
+  font-size: min(0.833vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--white);
 }
 .hero-carousel__nav {
@@ -381,18 +381,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 600px) {
   .hero-carousel__overlay {
     bottom: 12px;
-    left: 12px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    width: calc(100% - 24px);
+    right: 12px;
+    left: auto;
+    padding: 10px 14px;
+    border-radius: 10px;
+    width: auto;
+    max-width: 260px;
   }
   .hero-carousel__badge {
-    font-size: 11px;
-    padding: 3px 10px;
+    font-size: 10px;
+    padding: 3px 8px;
     margin-bottom: 6px;
   }
   .hero-carousel__impact {
-    font-size: 14px;
+    font-size: 13px;
   }
   .hero-carousel__nav {
     display: none;
