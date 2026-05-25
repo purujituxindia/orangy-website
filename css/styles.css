@@ -1634,13 +1634,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: clamp(8px, 0.833vw, 16px);
   font-size: var(--fs-24);
   font-weight: 300;
+  text-transform: capitalize;
 }
 .footer__bottom-link {
   color: var(--white);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
-.footer__bottom-link--orange { color: var(--brand); }
-.footer__bottom-link:hover { text-decoration: underline; }
+.footer__bottom-link--orange {
+  /* Removed default orange color */
+}
+.footer__bottom-link:hover {
+  color: var(--brand);
+}
 .footer__separator {
   color: rgba(255, 255, 255, 0.4);
   user-select: none;
