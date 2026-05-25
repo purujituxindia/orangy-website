@@ -309,24 +309,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-carousel__overlay {
   position: absolute;
-  bottom: clamp(16px, 1.667vw, 32px);
-  right: clamp(16px, 1.667vw, 32px);
+  bottom: clamp(48px, 4.5vw, 80px); /* Above the dots */
+  left: 50%;
+  right: auto;
+  display: flex;
+  align-items: center;
+  gap: min(0.625vw, 12px);
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: clamp(12px, 1.042vw, 20px) clamp(16px, 1.25vw, 24px);
-  border-radius: min(0.833vw, 16px);
-  max-width: min(24vw, 380px);
-  width: auto;
+  padding: min(0.313vw, 6px) min(1.042vw, 20px) min(0.313vw, 6px) min(0.313vw, 6px);
+  border-radius: var(--r-pill);
+  max-width: min(90vw, 800px);
+  width: max-content;
   z-index: 5;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  transform: translateY(24px);
+  transform: translateX(-50%) translateY(24px);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s, opacity 0.8s ease 0.3s;
 }
 .hero-carousel__slide.active .hero-carousel__overlay {
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 .hero-carousel__badge {
@@ -335,17 +339,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--white);
   font-size: min(0.625vw, 12px);
   font-weight: 700;
-  padding: min(0.208vw, 4px) min(0.625vw, 12px);
+  padding: min(0.313vw, 6px) min(0.833vw, 16px);
   border-radius: var(--r-pill);
-  margin-bottom: min(0.417vw, 8px);
+  flex-shrink: 0;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 .hero-carousel__impact {
-  font-size: min(0.833vw, 16px);
+  font-size: min(0.729vw, 14px);
   font-weight: 500;
   line-height: 1.4;
   color: var(--white);
+  white-space: nowrap;
 }
 .hero-carousel__nav {
   display: none;
@@ -380,21 +385,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 @media (max-width: 600px) {
   .hero-carousel__overlay {
-    bottom: 12px;
-    right: 12px;
-    left: auto;
-    padding: 10px 14px;
-    border-radius: 10px;
-    width: auto;
-    max-width: 260px;
+    bottom: 24px; /* Dots are hidden on mobile, but keeping it slightly elevated */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(24px);
+    padding: 4px 12px 4px 4px;
+    border-radius: 9999px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+  }
+  .hero-carousel__slide.active .hero-carousel__overlay {
+    transform: translateX(-50%) translateY(0);
   }
   .hero-carousel__badge {
     font-size: 10px;
     padding: 3px 8px;
-    margin-bottom: 6px;
   }
   .hero-carousel__impact {
-    font-size: 13px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .hero-carousel__nav {
     display: none;
