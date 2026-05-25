@@ -150,7 +150,7 @@
   line-height: 1.1;
 }
 .studio-highlight__label {
-  font-size: var(--fs-18);
+  font-size: var(--fs-20);
   font-weight: 400;
   color: var(--black);
 }

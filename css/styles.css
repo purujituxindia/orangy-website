@@ -348,43 +348,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--white);
 }
 .hero-carousel__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(40px, 2.917vw, 56px);
-  height: clamp(40px, 2.917vw, 56px);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 6;
-}
-.hero-carousel__nav:hover {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-50%) scale(1.08);
-}
-.hero-carousel__nav--left {
-  left: clamp(16px, 1.25vw, 24px);
-}
-.hero-carousel__nav--right {
-  right: clamp(16px, 1.25vw, 24px);
-}
-.hero-carousel__nav svg {
-  width: clamp(20px, 1.25vw, 24px);
-  height: clamp(20px, 1.25vw, 24px);
+  display: none;
 }
 .hero-carousel__dots {
   position: absolute;
   bottom: clamp(20px, 2.083vw, 40px);
-  right: clamp(20px, 2.083vw, 40px);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 8px;
   z-index: 6;

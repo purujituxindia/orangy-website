@@ -245,6 +245,7 @@ select.audit-form__input option {
 .audit-form__textarea {
   resize: vertical;
   min-height: min(7.292vw, 140px);
+  width: 100%;
 }
 
 .audit-form__footer {
