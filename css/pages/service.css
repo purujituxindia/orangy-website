@@ -340,9 +340,9 @@
   justify-content: center;
   background: var(--brand);
   color: var(--white);
-  font-size: var(--fs-32);
+  font-size: var(--fs-24);
   font-weight: 400;
-  padding: min(1.458vw, 28px) min(1.667vw, 32px);
+  padding: min(1.042vw, 20px) min(1.667vw, 32px);
   border-radius: var(--r-card);
   transition: opacity 0.2s;
 }
