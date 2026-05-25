@@ -1062,13 +1062,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .testimonial__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: clamp(18px, 2.083vw, 40px);
   flex: 1;
 }
 .testimonial__person {
   order: 2;
-  margin-top: auto;
 }
 .testimonial__name {
   font-size: var(--fs-32);
