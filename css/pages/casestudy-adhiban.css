@@ -239,7 +239,7 @@ img[data-placeholder]:not([src=""]) {
 }
 
 .cs-solution-card__body {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: rgba(0,0,0,0.71);
   line-height: 1.4;
@@ -345,7 +345,7 @@ img[data-placeholder]:not([src=""]) {
   position: absolute;
   top: min(2.083vw, 40px);
   left: min(1.771vw, 34px);
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--black);
   line-height: 1.2;
@@ -397,7 +397,7 @@ img[data-placeholder]:not([src=""]) {
 }
 
 .cs-stats__subtitle {
-  font-size: var(--fs-18);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--white);
   letter-spacing: 0.05em;
@@ -439,7 +439,7 @@ img[data-placeholder]:not([src=""]) {
 }
 
 .cs-stat__desc {
-  font-size: var(--fs-18);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--white);
   line-height: 1.33;
@@ -589,7 +589,7 @@ img[data-placeholder]:not([src=""]) {
   background: rgba(255,255,255,0.18);
   border: 1px solid rgba(255,255,255,0.3);
   color: var(--white);
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 700;
   line-height: 1;
 }
@@ -603,14 +603,14 @@ img[data-placeholder]:not([src=""]) {
 
 .cs-testimonial__name {
   font-family: 'Figtree', 'Manrope', sans-serif;
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 600;
   line-height: 1.143;
 }
 
 .cs-testimonial__role {
   font-family: 'Figtree', 'Manrope', sans-serif;
-  font-size: var(--fs-18);
+  font-size: var(--fs-24);
   font-weight: 400;
   line-height: 1.125;
   text-align: center;
@@ -679,7 +679,7 @@ img[data-placeholder]:not([src=""]) {
   position: absolute;
   top: min(2.083vw, 40px);
   left: min(1.771vw, 34px);
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--black);
   z-index: 2;

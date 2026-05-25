@@ -170,7 +170,7 @@
   align-items: center;
   justify-content: center;
   font-family: 'Manrope', sans-serif;
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
   z-index: 0;
@@ -238,7 +238,7 @@
 .pf-card__tag {
   background: var(--brand-light);
   color: var(--brand);
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 700;
   padding: min(0.417vw, 8px) min(1.25vw, 24px);
   border-radius: var(--r-tag);
@@ -253,7 +253,7 @@
   border: 1px solid rgba(255, 80, 35, 0.18);
   color: var(--brand);
   font-weight: 700;
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   padding: min(0.313vw, 6px) min(0.833vw, 16px);
   border-radius: var(--r-tag);
   white-space: nowrap;

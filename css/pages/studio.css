@@ -75,7 +75,7 @@
   line-height: 1;
 }
 .studio-stats__label {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--black);
 }
@@ -150,7 +150,7 @@
   line-height: 1.1;
 }
 .studio-highlight__label {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--black);
 }
@@ -189,7 +189,7 @@
   line-height: 1.2;
 }
 .studio-highlight__info-sub {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-body);
   margin-top: min(0.625vw, 12px);
@@ -212,7 +212,7 @@
   line-height: 1.2;
 }
 .studio-highlight__users-sub {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-body);
 }
@@ -405,7 +405,7 @@
   gap: min(0.208vw, 4px);
 }
 .team-card__role {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-gray);
 }
@@ -419,7 +419,7 @@
   display: flex;
   align-items: center;
   gap: min(0.417vw, 8px);
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   margin-top: min(0.417vw, 8px);
 }
 .team-card__link {
@@ -446,7 +446,7 @@
 }
 .studio-industry__title strong { font-weight: 700; }
 .studio-industry__sub {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-body);
   margin-bottom: var(--gap-lg);
@@ -477,7 +477,7 @@
 .industry-cell__count {
   position: absolute;
   right: clamp(16px, 1.667vw, 32px);
-  font-size: var(--fs-18);
+  font-size: var(--fs-24);
   font-weight: 700;
   color: var(--brand);
   opacity: 0;

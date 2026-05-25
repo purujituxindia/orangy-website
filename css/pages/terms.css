@@ -76,7 +76,7 @@
 }
 
 .toc-link {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 500;
   color: var(--text-gray);
   padding: 6px 12px;
@@ -203,7 +203,7 @@
 
 /* Highlight boxes */
 .terms-note {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   color: var(--text-gray);
   font-style: italic;
 }

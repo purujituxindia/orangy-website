@@ -168,7 +168,7 @@
 .svc-industry__title strong { font-weight: 700; }
 
 .svc-industry__sub {
-  font-size: var(--fs-20);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-body);
   margin-bottom: var(--gap-lg);
@@ -201,7 +201,7 @@
 .svc-industry-cell__count {
   position: absolute;
   right: clamp(16px, 1.667vw, 32px);
-  font-size: var(--fs-18);
+  font-size: var(--fs-24);
   font-weight: 700;
   color: var(--brand);
   opacity: 0;
