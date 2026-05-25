@@ -1016,9 +1016,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .testimonial__card {
   background: rgba(255,255,255,0.66);
-  display: flex;
-  gap: clamp(18px, 1.875vw, 36px);
-  padding: clamp(16px, 1.667vw, 32px);
+  display: grid;
+  grid-template-areas:
+    "quote quote"
+    "photo person";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  gap: clamp(20px, 2.083vw, 40px) clamp(16px, 1.667vw, 32px);
+  padding: clamp(24px, 2.5vw, 48px) clamp(24px, 2.5vw, 48px);
   border-radius: var(--r-card);
   align-items: stretch;
   flex-shrink: 0;
@@ -1043,11 +1048,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 4px;
 }
 .testimonial__photo-wrap {
+  grid-area: photo;
   background: var(--neutral-100);
-  border-radius: var(--r-card);
+  border-radius: 50%;
   overflow: hidden;
-  width: clamp(120px, 11.458vw, 220px);
-  height: clamp(150px, 14.583vw, 280px);
+  width: clamp(60px, 4.167vw, 80px);
+  height: clamp(60px, 4.167vw, 80px);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1060,13 +1066,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-fit: cover;
 }
 .testimonial__body {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(18px, 2.083vw, 40px);
-  flex: 1;
+  display: contents;
 }
 .testimonial__person {
-  order: 2;
+  grid-area: person;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .testimonial__name {
   font-size: var(--fs-32);
@@ -1080,11 +1086,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--black);
 }
 .testimonial__quote {
-  order: 1;
+  grid-area: quote;
   font-size: var(--fs-24);
   font-weight: 400;
   color: var(--text-body);
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 /* ===========================
