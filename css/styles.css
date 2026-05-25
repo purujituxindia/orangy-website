@@ -1640,7 +1640,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: clamp(8px, 0.833vw, 16px);
-  font-size: var(--fs-24);
+  font-size: var(--fs-20);
   font-weight: 300;
   text-transform: capitalize;
 }
