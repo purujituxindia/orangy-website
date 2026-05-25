@@ -1394,7 +1394,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .cta__heading strong { font-weight: 700; color: var(--white); }
 .cta__sub {
-  font-size: var(--fs-32);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: rgba(255,255,255,0.5);
   line-height: 1.6;

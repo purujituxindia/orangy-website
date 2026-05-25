@@ -741,7 +741,7 @@ img[data-placeholder]:not([src=""]) {
 }
 
 .cs-cta__heading {
-  font-size: min(3.333vw, 64px);
+  font-size: var(--fs-64);
   font-weight: 300;
   color: var(--white);
   line-height: 1.4375;
@@ -753,7 +753,7 @@ img[data-placeholder]:not([src=""]) {
 }
 
 .cs-cta__sub {
-  font-size: var(--fs-32);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: rgba(255,255,255,0.5);
   line-height: 1.62;

@@ -350,7 +350,7 @@
 
 .pf-cta__heading {
   font-family: 'Manrope', sans-serif;
-  font-size: min(3.333vw, 64px);
+  font-size: var(--fs-64);
   font-weight: 300;
   line-height: 1.4375;
   color: var(--white);
@@ -362,7 +362,7 @@
 }
 
 .pf-cta__sub {
-  font-size: var(--fs-32);
+  font-size: var(--fs-24);
   font-weight: 400;
   color: rgba(255,255,255,0.5);
   line-height: 1.62;

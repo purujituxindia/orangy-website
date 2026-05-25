@@ -327,7 +327,7 @@
 }
 
 .svc-cta__sub {
-  font-size: var(--fs-32);
+  font-size: var(--fs-24);
   font-weight: 400;
   line-height: 1.6;
   color: rgba(255,255,255,0.5);
