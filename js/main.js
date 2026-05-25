@@ -376,6 +376,8 @@
     });
   }
 
+  var isAnimating = false;
+
   function jumpTo(idx) {
     track.style.transition = 'none';
     track.getBoundingClientRect();
@@ -387,6 +389,8 @@
   }
 
   function goTo(idx) {
+    if (isAnimating) return;
+    isAnimating = true;
     current = idx;
     updateDots(current);
     track.style.transform = 'translateX(-' + cards[current].offsetLeft + 'px)';
@@ -395,6 +399,7 @@
   // After each animated transition, silently reset if we landed on a clone
   track.addEventListener('transitionend', function (e) {
     if (e.propertyName !== 'transform') return;
+    isAnimating = false;
     if (current < origCount) {
       jumpTo(current + origCount);
     } else if (current >= 2 * origCount) {
