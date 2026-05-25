@@ -1688,8 +1688,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .summary-section__headline {
   font-size: var(--fs-40);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
   color: var(--black); /* Bold charcoal text */
   margin-bottom: 12px;
 }
