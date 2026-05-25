@@ -3,15 +3,22 @@
   var navbar = document.querySelector('.navbar');
   if (!navbar) return;
   var lastY = window.scrollY;
+  var ticking = false;
   window.addEventListener('scroll', function () {
     var y = window.scrollY;
-    if (y > lastY && y > 80) {
-      navbar.classList.add('navbar--hidden');
-    } else {
-      navbar.classList.remove('navbar--hidden');
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        if (y > lastY && y > 80) {
+          navbar.classList.add('navbar--hidden');
+        } else {
+          navbar.classList.remove('navbar--hidden');
+        }
+        navbar.classList.toggle('navbar--scrolled', y > 10);
+        lastY = y;
+        ticking = false;
+      });
+      ticking = true;
     }
-    navbar.classList.toggle('navbar--scrolled', y > 10);
-    lastY = y;
   }, { passive: true });
 })();
 
@@ -58,25 +65,38 @@
   var hero = document.querySelector('.hero');
   var card = document.querySelector('.hero__card-preview');
   if (!hero || !card) return;
+  var heroH, winH, range;
+  var ticking = false;
 
-  function update() {
-    // Disable on mobile — card is hidden anyway
-    if (window.innerWidth <= 600) return;
-
-    var scrollY = window.scrollY;
-    var heroH   = hero.offsetHeight;
-    var winH    = window.innerHeight;
-    var range   = heroH - winH; // = 100vh of scroll room
-    var progress = Math.max(0, Math.min(1, scrollY / range));
-
-    // Card rises from 60% below fold → -2% (just above bottom edge)
-    var y = 60 - 62 * progress;
-    card.style.transform = 'translateX(-50%) translateY(' + y + '%)';
+  function updateLayout() {
+    heroH = hero.offsetHeight;
+    winH = window.innerHeight;
+    range = Math.max(1, heroH - winH);
+    update();
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update, { passive: true });
-  update();
+  function update() {
+    if (window.innerWidth <= 600) {
+      ticking = false;
+      return;
+    }
+    var scrollY = window.scrollY;
+    var progress = Math.max(0, Math.min(1, scrollY / range));
+    var y = 60 - 62 * progress;
+    card.style.transform = 'translateX(-50%) translateY(' + y + '%)';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  window.addEventListener('resize', function() {
+    window.requestAnimationFrame(updateLayout);
+  }, { passive: true });
+  updateLayout();
 })();
 
 // Tag pills — Healthcare UX deactivates when another pill is hovered
