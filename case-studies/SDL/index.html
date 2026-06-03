@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACG — Case Study | Orangy Design</title>
+  <title>SDL — Case Study | Orangy Design</title>
+  <meta name="description" content="Read the SDL UI/UX case study. Learn how Orangy Design designed human-centered lab software interfaces for accuracy, speed, and trust in medical diagnostics.">
+  <meta name="keywords" content="SDL, Healthcare UX, Lab Software, Data Visualization, Workflow Optimization, Orangy Design">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800" rel="stylesheet">
@@ -16,8 +18,8 @@
 <!-- =========================================
      MOBILE NAV OVERLAY (reused)
 ========================================= -->
-<div class="mobile-nav" aria-hidden="true">
-  <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
+<div class="mobile-nav" aria-hidden="true" id="mobileNavOverlay">
+  <button class="mobile-nav__close" aria-label="Close menu" id="mobileNavCloseBtn">&times;</button>
   <a href="/studio/">Studio</a>
   <a href="/services/">Service</a>
   <a href="/portfolio/">Works</a>
@@ -27,19 +29,19 @@
 <!-- =========================================
      NAVBAR (reused — sticky variant)
 ========================================= -->
-<nav class="navbar navbar--page">
-  <a href="../../index.html">
+<nav class="navbar navbar--page" id="mainStickyNavbar">
+  <a href="../../index.html" id="navbarHomeLink">
     <img class="navbar__logo"
          src="../../assets/logos/Orangy-logo-white-bg-orange-icon.svg"
          alt="Orangy Design">
   </a>
-  <div class="navbar__nav">
+  <div class="navbar__nav" id="navbarLinksContainer">
     <a href="/studio/">Studio</a>
     <a href="/services/">Service</a>
     <a href="/portfolio/" class="navbar__nav--active">Works</a>
   </div>
-  <a href="/contact/" class="navbar__cta">Let's Connect</a>
-  <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+  <a href="/contact/" class="navbar__cta" id="navbarCtaConnectLink">Let's Connect</a>
+  <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" id="navbarHamburgerBtn">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -48,37 +50,36 @@
 <!-- =========================================
      CASE STUDY HERO
 ========================================= -->
-<section class="cs-hero">
+<section class="cs-hero" id="sdlHeroSection">
   <div class="cs-hero__top">
     <div class="cs-hero__title-group">
-      <h1 class="cs-hero__title">ACG</h1>
-      <p class="cs-hero__subtitle">A Human-Centered IoT Experience for Digital Manufacturing</p>
+      <h1 class="cs-hero__title">SDL</h1>
+      <p class="cs-hero__subtitle">Designing reliable interfaces for modern laboratories</p>
       <div class="cs-hero__tags">
+        <span class="cs-tag">Workflow Optimization</span>
+        <span class="cs-tag">Data Visualization</span>
         <span class="cs-tag">UX Research</span>
-        <span class="cs-tag">Product Design</span>
-        <span class="cs-tag">Design System</span>
       </div>
     </div>
 
     <div class="cs-hero__meta">
       <div class="cs-meta-item">
         <span class="cs-meta-item__label">Tools Used</span>
-        <span class="cs-meta-item__value">Figma <span class="cs-meta-item__sep">|</span> Miro <span class="cs-meta-item__sep">|</span> Story book <span class="cs-meta-item__sep">|</span> Jira</span>
+        <span class="cs-meta-item__value">Figma <span class="cs-meta-item__sep">|</span> Miro <span class="cs-meta-item__sep">|</span> Illustrator</span>
       </div>
       <div class="cs-meta-item">
         <span class="cs-meta-item__label">Time Line</span>
-        <span class="cs-meta-item__value">10 Weeks</span>
+        <span class="cs-meta-item__value">8 Weeks</span>
       </div>
     </div>
   </div>
 
-  <!-- Hero banner image — replace src with actual image path -->
+  <!-- Hero banner image -->
   <div class="cs-hero__img-wrap">
     <img class="cs-hero__img"
-         src="../../assets/portfolio/acg_1.avif"
-         alt="ACG Industrial IoT — hero banner"
-         data-placeholder="cs-hero-banner"
-         style="object-fit: contain; background: #fae3ff;">
+         src="../../assets/images/works/SDL/sdl-1.avif"
+         alt="SDL laboratory software — hero banner"
+         data-placeholder="cs-hero-banner">
   </div>
 </section>
 
@@ -86,10 +87,9 @@
 <!-- =========================================
      INTRO PARAGRAPH
 ========================================= -->
-<section class="cs-intro">
+<section class="cs-intro" id="sdlIntroSection">
   <p class="cs-intro__text">
-    ACG operates in a data-intensive manufacturing environment where machines generate continuous streams of real-time information. While the technology was robust, the experience was not. Teams struggled to interpret data quickly, leading to delayed decisions and reduced operational efficiency.
-    ACG needed an IoT platform that didn’t just collect data—but translated complexity into clarity.
+    We partnered with SDL to design a laboratory software experience built for accuracy, speed, and trust. By aligning digital workflows with real-world lab processes, introducing role-based dashboards, and embedding error-preventive UX patterns, we transformed complex, data-heavy operations into clear, reliable interfaces.
   </p>
 </section>
 
@@ -97,15 +97,12 @@
 <!-- =========================================
      THE CHALLENGE
 ========================================= -->
-<section class="cs-challenge">
+<section class="cs-challenge" id="sdlChallengeSection">
   <h2 class="cs-section-title">The Challenge</h2>
   <p class="cs-challenge__body">
-    Like many industrial IoT systems, the platform prioritised system capability over human usability. This resulted in:
-
-Information-heavy dashboards with low signal-to-noise ratio
-Critical insights buried beneath layers of data
-Interfaces that demanded attention instead of supporting decisions
-The challenge was to design an experience that matched the pace and pressure of manufacturing environments.
+    SDL is a laboratory software platform supporting technicians, pathologists, and administrators in managing high-volume, data-critical lab operations. The system needed to deliver speed, accuracy, and reliability while handling complex workflows such as sample lifecycle management, test processing, reporting, and compliance.
+    <br><br>
+    Key challenges included mitigating error-prone workflows in time-sensitive environments, organizing dense and data-heavy interfaces to reduce cognitive overload, and offering clear visibility across sample status, results, and operational metrics.
   </p>
 </section>
 
@@ -113,39 +110,38 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      THE SOLUTION
 ========================================= -->
-<section class="cs-solution">
+<section class="cs-solution" id="sdlSolutionSection">
   <div class="cs-solution__header-row">
     <h2 class="cs-section-title">The Solution</h2>
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Role &amp; Workflow Adaptation:</p>
+      <p class="cs-solution-card__heading">Workflow-Aligned IA:</p>
       <p class="cs-solution-card__body">
-        Interfaces tailored for operators, supervisors, and leadership ensured focus and relevance at every level. By mirroring real manufacturing workflows, we reduced friction between insight and action.
+        Structuring interfaces to mirror real-world lab processes—from sample intake to result validation—reducing friction and improving overall task flow.
       </p>
     </div>
   </div>
 
   <div class="cs-solution__cards-row">
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Actionable Visualizations:</p>
+      <p class="cs-solution-card__heading">Role-Based Experiences:</p>
       <p class="cs-solution-card__body">
-        Machine data was transformed into visual patterns that could be understood at a glance. Information was structured to highlight exceptions, anomalies, and trends—enabling faster responses.
+        Distinct, tailored viewports and metrics for technicians, pathologists, and administrators to ensure faster decision-making and fewer distractions.
       </p>
     </div>
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Scalable Design System:</p>
+      <p class="cs-solution-card__heading">Error-Preventive UX:</p>
       <p class="cs-solution-card__body">
-        We created a modular UI framework to support future expansion across different plants and machinery lines without UX debt.
+        Introducing inline validations, clear status indicators, and contextual alerts to proactively reduce errors in critical diagnostic steps.
       </p>
     </div>
   </div>
 
-  <!-- Solution image — replace src with actual image path -->
-  <div class="cs-solution__img-wrap" style="height: min(50vw, 960px); background: #fae3ff;">
+  <!-- Solution image -->
+  <div class="cs-solution__img-wrap">
     <img class="cs-solution__img"
-         src="../../assets/images/works/ACG/acg_3.avif"
-         alt="ACG solution — smart factory dashboards"
-         data-placeholder="cs-solution-img"
-         style="object-fit: contain; background: #fae3ff;">
+         src="../../assets/images/works/SDL/sdl-4.avif"
+         alt="SDL solution — lab software dashboards"
+         data-placeholder="cs-solution-img">
   </div>
 </section>
 
@@ -153,31 +149,32 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      KEY FEATURES
 ========================================= -->
-<section class="cs-features">
+<section class="cs-features" id="sdlFeaturesSection">
   <div class="cs-features__inner">
     <div class="cs-features__left">
       <h2 class="cs-section-title">Key Features</h2>
       <p class="cs-features__desc">
-        The platform was designed with features that support fast decisions, reduce cognitive load, and scale with evolving manufacturing needs. Each element was thoughtfully crafted to fit naturally into existing workflows, without adding friction or complexity. The result is an experience that feels dependable, intuitive, and ready for the realities of the shop floor.      </p>
+        Each feature was designed around real laboratory workflows—helping teams work faster while reducing the risk of error. Tasks follow a clear, logical progression, allowing users to stay focused without second-guessing their actions. This ensures smoother operations even in high-volume, time-sensitive environments.
+      </p>
     </div>
 
     <div class="cs-features__right">
       <div class="cs-features__grid">
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Real-Time Monitoring</p>
-          <p class="cs-feature-item__body">Live tracking of machine state and OEE metrics directly on the shop floor.</p>
+          <p class="cs-feature-item__title">Sample Tracking</p>
+          <p class="cs-feature-item__body">End-to-end visibility of sample status from collection through to final reporting.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Anomalies &amp; Alerts</p>
-          <p class="cs-feature-item__body">Automatic detection and highlighting of exceptions, failures, and production bottlenecks.</p>
+          <p class="cs-feature-item__title">Smart Validations</p>
+          <p class="cs-feature-item__body">Proactive error prevention and smart alerts during data entry and approvals.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Role-Based Views</p>
-          <p class="cs-feature-item__body">Tailored interfaces providing high-level trends for managers and actionable alerts for operators.</p>
+          <p class="cs-feature-item__title">Lab Analytics</p>
+          <p class="cs-feature-item__body">Real-time insights into lab performance, turnaround times, and operational bottlenecks.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Modular UI Components</p>
-          <p class="cs-feature-item__body">A flexible library of design system blocks that scales across different factory lines.</p>
+          <p class="cs-feature-item__title">Compliance UX</p>
+          <p class="cs-feature-item__body">Transparent, audit-ready records designed to satisfy strict quality and regulatory requirements.</p>
         </div>
       </div>
     </div>
@@ -188,19 +185,17 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      OUTCOMES — IMAGE CARDS
 ========================================= -->
-<section class="cs-outcomes-cards">
+<section class="cs-outcomes-cards" id="sdlOutcomesCardsSection">
   <div class="cs-outcomes-card">
-    <!-- Replace src with actual image path -->
     <img class="cs-outcomes-card__img cs-outcomes-card__img--left"
-         src="../../assets/images/works/ACG/acg_1.avif"
-         alt="ACG IoT platform — outcome dashboard visual 1"
+         src="../../assets/images/works/SDL/sdl-2.avif"
+         alt="SDL dashboard layout wireframe 1"
          data-placeholder="cs-outcome-img-1">
   </div>
   <div class="cs-outcomes-card">
-    <!-- Replace src with actual image path -->
     <img class="cs-outcomes-card__img cs-outcomes-card__img--center"
-         src="../../assets/images/works/ACG/acg_2.avif"
-         alt="ACG IoT platform — outcome dashboard visual 2"
+         src="../../assets/images/works/SDL/sdl-3.avif"
+         alt="SDL dashboard layout wireframe 2"
          data-placeholder="cs-outcome-img-2">
   </div>
 </section>
@@ -209,34 +204,34 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      OUTCOMES — STATS (dark)
 ========================================= -->
-<section class="cs-stats">
+<section class="cs-stats" id="sdlStatsSection">
   <div class="cs-stats__header">
     <p class="cs-stats__eyebrow">OUTCOMES</p>
     <p class="cs-stats__subtitle">
-      A redesigned interface that transformed machine data complexity into real-world operational clarity.
+      The redesigned experience delivered measurable improvements across day-to-day lab operations.
     </p>
   </div>
 
   <div class="cs-stats__grid">
     <div class="cs-stat">
-      <p class="cs-stat__num">12+</p>
+      <p class="cs-stat__num">30%</p>
       <div class="cs-stat__body">
-        <p class="cs-stat__title">Smart Factories</p>
-        <p class="cs-stat__desc">Platform scaled and successfully deployed across multiple facilities globally.</p>
-      </div>
-    </div>
-    <div class="cs-stat">
-      <p class="cs-stat__num">-35%</p>
-      <div class="cs-stat__body">
-        <p class="cs-stat__title">Cognitive Load</p>
-        <p class="cs-stat__desc">Clean visual prioritization reduced time-to-inspect for shop-floor operators.</p>
+        <p class="cs-stat__title">Faster Execution</p>
+        <p class="cs-stat__desc">Increased task execution speed in high-volume, time-sensitive lab environments.</p>
       </div>
     </div>
     <div class="cs-stat">
       <p class="cs-stat__num">Zero</p>
       <div class="cs-stat__body">
-        <p class="cs-stat__title">UX Debt</p>
-        <p class="cs-stat__desc">The modular design system allows easy and consistent addition of new machinery dashboards.</p>
+        <p class="cs-stat__title">Critical Errors</p>
+        <p class="cs-stat__desc">Proactive alerts and inline verification significantly reduced operational mistakes.</p>
+      </div>
+    </div>
+    <div class="cs-stat">
+      <p class="cs-stat__num">2x</p>
+      <div class="cs-stat__body">
+        <p class="cs-stat__title">User Confidence</p>
+        <p class="cs-stat__desc">Pathologists and technicians reported higher clarity and trust in result interpretation.</p>
       </div>
     </div>
   </div>
@@ -246,58 +241,57 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      THE PROCESS
 ========================================= -->
-<section class="cs-process">
+<section class="cs-process" id="sdlProcessSection">
   <img class="cs-process__img"
-       src="../../assets/portfolio/acg_5.avif"
-       alt="ACG — design process"
+       src="../../assets/images/works/SDL/sdl-5.avif"
+       alt="SDL — design process"
        data-placeholder="cs-process-img">
-  <!-- <p class="cs-process__label">The Process</p> -->
 </section>
 
 
 <!-- =========================================
      FINAL THOUGHTS
 ========================================= -->
-<section class="cs-final-thoughts">
+<section class="cs-final-thoughts" id="sdlFinalThoughtsSection">
   <h2 class="cs-final-thoughts__title">Final Thoughts</h2>
   <p class="cs-final-thoughts__body">
-    Our <strong>design philosophy</strong> turned <strong>industrial complexity</strong> into <strong>shop-floor simplicity</strong>. By engineering role-aware workspaces and clear anomaly visualization, we ensured every user, from the machine operator to the plant supervisor, experiences ACG as a reliable ally for <strong>daily operations and efficiency</strong>.
+    We design for environments where every interaction matters. By translating complex laboratory processes into intuitive, reliable interfaces, we help lab-tech companies build software that teams trust and adopt.
+    <br><br>
+    <strong>The Result:</strong> Scalable, error-resistant systems that empower laboratories to deliver accurate results—efficiently and confidently.
   </p>
 </section>
 
 
 <!-- =========================================
-     TESTIMONIAL
+     TESTIMONIAL (Commented Out - No Testimonial Provided for SDL)
 ========================================= -->
-<section class="cs-testimonial">
+<!--
+<section class="cs-testimonial" id="sdlTestimonialSection">
   <div class="cs-testimonial__card">
-    <!-- Decorative icon -->
-    <img class="cs-testimonial__icon"
-         src="../../assets/icons/ICON.svg"
-         alt="" aria-hidden="true">
-
+    <img class="cs-testimonial__icon" src="../../assets/icons/ICON.svg" alt="" aria-hidden="true">
     <p class="cs-testimonial__heading">Testimonial</p>
     <blockquote class="cs-testimonial__quote">
-      UXIndia has exceeded our expectations in translating complex machine data into clean, usable dashboards. Our shop-floor operators can now identify alerts instantly.
+      ...
     </blockquote>
     <div class="cs-testimonial__author">
-      <div class="cs-testimonial__avatar cs-testimonial__avatar--fallback" aria-hidden="true">KG</div>
+      <div class="cs-testimonial__avatar cs-testimonial__avatar--fallback" aria-hidden="true">AS</div>
       <div class="cs-testimonial__author-info">
-        <p class="cs-testimonial__name">Karthick G.</p>
-        <p class="cs-testimonial__role">Plant Operations Lead</p>
+        <p class="cs-testimonial__name">...</p>
+        <p class="cs-testimonial__role">...</p>
       </div>
     </div>
   </div>
 </section>
+-->
 
 
 <!-- =========================================
      NEXT PROJECT
 ========================================= -->
-<section class="cs-next">
+<section class="cs-next" id="sdlNextProjectSection">
   <div class="cs-next__info">
-    <p class="cs-next__title">Jewel</p>
-    <a href="../../case-studies/jewel/" class="cs-next__btn">
+    <p class="cs-next__title">Petrus</p>
+    <a href="../../case-studies/petrus/" class="cs-next__btn" id="sdlNextProjectBtn">
       Next Project
       <svg class="cs-next__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
@@ -305,11 +299,9 @@ The challenge was to design an experience that matched the pace and pressure of 
     </a>
   </div>
   <div class="cs-next__preview">
-
-    <!-- Replace src with actual image path for Jewel preview -->
     <img class="cs-next__preview-img cs-next__preview-img--portfolio"
-         src="../../assets/portfolio/Jewel.png"
-         alt="Jewel preview"
+         src="../../assets/portfolio/Petrus.png"
+         alt="Petrus preview"
          data-placeholder="cs-next-project-img">
   </div>
 </section>
@@ -318,7 +310,7 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      CTA
 ========================================= -->
-<section class="cs-cta">
+<section class="cs-cta" id="sdlCtaSection">
   <canvas id="cta-canvas" class="cs-cta__canvas" aria-hidden="true"></canvas>
   <div class="cs-cta__content">
     <div class="cs-cta__heading">
@@ -326,7 +318,7 @@ The challenge was to design an experience that matched the pace and pressure of 
       <p class="cs-cta__heading--orange">Reach out to us.</p>
     </div>
     <p class="cs-cta__sub">We're selective about the projects we take on. Which means the ones we do, we do well.</p>
-    <a href="mailto:hello@orangy.design" class="cs-cta__btn">Contact Us</a>
+    <a href="mailto:hello@orangy.design" class="cs-cta__btn" id="sdlCtaContactBtn">Contact Us</a>
   </div>
 </section>
 
@@ -334,29 +326,29 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      ASK FOR SUMMARY (STANDALONE SECTION)
 ========================================= -->
-<section class="summary-section">
+<section class="summary-section" id="sdlAskForSummarySection">
   <div class="summary-section__container">
     <h2 class="summary-section__headline">Ask for Summary</h2>
     <p class="summary-section__desc">
       Analyze Orangy Design's expertise, UX maturity, branding, and product thinking instantly using your favorite AI assistant.
     </p>
     <div class="summary-section__icons">
-      <button onclick="askForSummary('Claude')" class="summary-section__btn summary-section__btn--claude" aria-label="Ask Claude for summary">
+      <button onclick="askForSummary('Claude')" class="summary-section__btn summary-section__btn--claude" aria-label="Ask Claude for summary" id="sdlAskClaudeBtn">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"/>
         </svg>
       </button>
-      <button onclick="askForSummary('ChatGPT')" class="summary-section__btn summary-section__btn--chatgpt" aria-label="Ask ChatGPT for summary">
+      <button onclick="askForSummary('ChatGPT')" class="summary-section__btn summary-section__btn--chatgpt" aria-label="Ask ChatGPT for summary" id="sdlAskChatgptBtn">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
         </svg>
       </button>
-      <button onclick="askForSummary('Perplexity')" class="summary-section__btn summary-section__btn--perplexity" aria-label="Ask Perplexity for summary">
+      <button onclick="askForSummary('Perplexity')" class="summary-section__btn summary-section__btn--perplexity" aria-label="Ask Perplexity for summary" id="sdlAskPerplexityBtn">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z"/>
         </svg>
       </button>
-      <button onclick="askForSummary('Google AI')" class="summary-section__btn summary-section__btn--googleai" aria-label="Ask Google AI for summary">
+      <button onclick="askForSummary('Google AI')" class="summary-section__btn summary-section__btn--googleai" aria-label="Ask Google AI for summary" id="sdlAskGoogleaiBtn">
         <svg viewBox="0 0 65 65" fill="currentColor">
           <path d="M32.447 0c.68 0 1.273.465 1.439 1.125a38.904 38.904 0 001.999 5.905c2.152 5 5.105 9.376 8.854 13.125 3.751 3.75 8.126 6.703 13.125 8.855a38.98 38.98 0 005.906 1.999c.66.166 1.124.758 1.124 1.438 0 .68-.464 1.273-1.125 1.439a38.902 38.902 0 00-5.905 1.999c-5 2.152-9.375 5.105-13.125 8.854-3.749 3.751-6.702 8.126-8.854 13.125a38.973 38.973 0 00-2 5.906 1.485 1.485 0 01-1.438 1.124c-.68 0-1.272-.464-1.438-1.125a38.913 38.913 0 00-2-5.905c-2.151-5-5.103-9.375-8.854-13.125-3.75-3.749-8.125-6.702-13.125-8.854a38.973 38.973 0 00-5.905-2A1.485 1.485 0 010 32.448c0-.68.465-1.272 1.125-1.438a38.903 38.903 0 005.905-2c5-2.151 9.376-5.104 13.125-8.854 3.75-3.749 6.703-8.125 8.855-13.125a38.972 38.972 0 001.999-5.905A1.485 1.485 0 0132.447 0z"/>
         </svg>
@@ -368,7 +360,7 @@ The challenge was to design an experience that matched the pace and pressure of 
 <!-- =========================================
      FOOTER (reused from main page)
 ========================================= -->
-<footer class="footer">
+<footer class="footer" id="sdlFooter">
   <img class="footer__bg-icon"
        src="https://www.figma.com/api/mcp/asset/1d39d39c-9806-4713-a4d0-8587605a2789"
        alt="" aria-hidden="true">

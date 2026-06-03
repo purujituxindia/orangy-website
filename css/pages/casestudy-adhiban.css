@@ -17,6 +17,51 @@ img[data-placeholder]:not([src=""]) {
   background: none;
 }
 
+/* ── Placeholder block (div) ──
+   Used when no image asset exists for a section yet.
+   Drop in a real <img> when assets are ready.
+================================================ */
+.cs-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(0,0,0,0.04) 39px,
+      rgba(0,0,0,0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(0,0,0,0.04) 39px,
+      rgba(0,0,0,0.04) 40px
+    ),
+    #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: inherit;
+}
+
+.cs-placeholder__icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.25;
+  flex-shrink: 0;
+}
+
+.cs-placeholder__text {
+  font-size: var(--fs-24);
+  font-weight: 500;
+  color: rgba(0,0,0,0.28);
+  letter-spacing: 0.04em;
+}
+
 /* ===========================
    NAVBAR override for page variant
 =========================== */
@@ -473,6 +518,21 @@ img[data-placeholder]:not([src=""]) {
   pointer-events: none;
 }
 
+.cs-laptop-mockup {
+  position: relative;
+  margin-top: min(6.771vw, 130px);
+  padding: 0 var(--pad);
+  width: 100%;
+}
+
+.cs-laptop-mockup__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-card);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+}
+
 
 /* ===========================
    FINAL THOUGHTS
@@ -629,11 +689,13 @@ img[data-placeholder]:not([src=""]) {
   justify-content: center;
 }
 
-.cs-next__info {
-  display: flex;
-  flex-direction: column;
-  gap: min(1.25vw, 24px);
-  width: min(43.854vw, 842px);
+/* Simple label/title variant (non-adhiban pages) */
+.cs-next__label {
+  display: block;
+  font-size: var(--fs-24);
+  font-weight: 400;
+  color: rgba(0,0,0,0.45);
+  margin-bottom: min(0.625vw, 12px);
 }
 
 .cs-next__title {
@@ -642,6 +704,25 @@ img[data-placeholder]:not([src=""]) {
   color: var(--black);
   line-height: 1.4375;
 }
+
+.cs-next__info {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25vw, 24px);
+  width: min(43.854vw, 842px);
+}
+
+.cs-next__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cs-next__title a:hover {
+  color: var(--brand);
+}
+
+
 
 .cs-next__btn {
   display: inline-flex;
@@ -708,6 +789,16 @@ img[data-placeholder]:not([src=""]) {
   object-fit: cover;
   border-radius: min(2.083vw, 40px);
 }
+
+.cs-next__preview-img--portfolio {
+  width: 90% !important;
+  height: 90% !important;
+  min-height: 90% !important;
+  object-fit: cover;
+  border-radius: var(--r-card) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
 
 
 /* ===========================

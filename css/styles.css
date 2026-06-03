@@ -286,7 +286,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(75%);
+  filter: none; /* Removed the black image overlay filter */
   transition: transform 6.5s cubic-bezier(0.1, 0.8, 0.2, 1);
   transform: scale(1.08);
 }
@@ -309,13 +309,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-carousel__overlay {
   position: absolute;
-  bottom: clamp(48px, 4.5vw, 80px); /* Above the dots */
+  bottom: clamp(24px, 2.5vw, 44px); /* Lowered below the old position */
   left: 50%;
   right: auto;
   display: flex;
   align-items: center;
   gap: min(0.625vw, 12px);
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45); /* Restored the text background overlay */
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -325,7 +325,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: max-content;
   z-index: 5;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  transform: translateX(-50%) translateY(24px);
+  transform: translateX(-50%) translateY(16px);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s, opacity 0.8s ease 0.3s;
 }
@@ -357,7 +357,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-carousel__dots {
   position: absolute;
-  bottom: clamp(20px, 2.083vw, 40px);
+  bottom: clamp(10px, 1.0vw, 18px); /* Lowered even below the text overlay */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -385,14 +385,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 @media (max-width: 600px) {
   .hero-carousel__overlay {
-    bottom: 24px; /* Dots are hidden on mobile, but keeping it slightly elevated */
+    bottom: 12px; /* Lowered on mobile */
     left: 50%;
     right: auto;
-    transform: translateX(-50%) translateY(24px);
+    transform: translateX(-50%) translateY(16px);
     padding: 4px 12px 4px 4px;
     border-radius: 9999px;
     width: max-content;
     max-width: calc(100% - 24px);
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   }
   .hero-carousel__slide.active .hero-carousel__overlay {
     transform: translateX(-50%) translateY(0);
@@ -676,6 +679,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-position: center top;
 }
 .work-card__img-wrap {
+  position: relative;
   border-radius: var(--r-card) var(--r-card) 0 0;
   overflow: hidden;
   background: var(--neutral-100);
