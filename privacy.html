@@ -7,33 +7,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/pages/privacy.css">
-  <link rel="icon" href="../assets/icons/META LOGO.svg">
+  <link rel="stylesheet" href="Assets/css/styles.css">
+  <link rel="stylesheet" href="Assets/css/privacy.css">
+  <link rel="icon" href="Assets/icons/META LOGO.svg">
 </head>
 <body>
 
 <!-- Mobile nav overlay -->
 <div class="mobile-nav" aria-hidden="true">
   <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
-  <a href="../index.html">Home</a>
-  <a href="/studio/">Studio</a>
-  <a href="/services/">Service</a>
-  <a href="/portfolio/">Works</a>
-  <a href="/contact/" class="mobile-nav__cta">Let's Connect</a>
+  <a href="index.html">Home</a>
+  <a href="studio.html">Studio</a>
+  <a href="services.html">Service</a>
+  <a href="portfolio.html">Works</a>
+  <a href="contact.html" class="mobile-nav__cta">Let's Connect</a>
 </div>
 
 <!-- Fixed navbar -->
 <nav class="navbar privacy-navbar">
-  <a href="../index.html">
-    <img class="navbar__logo" src="../assets/logos/Orangy-logo-white-bg-orange-icon.svg" alt="Orangy Design">
+  <a href="index.html">
+    <img class="navbar__logo" src="Assets/logos/Orangy-logo-white-bg-orange-icon.svg" alt="Orangy Design">
   </a>
   <div class="navbar__nav">
-    <a href="/studio/">Studio</a>
-    <a href="/services/">Service</a>
-    <a href="/portfolio/">Works</a>
+    <a href="studio.html">Studio</a>
+    <a href="services.html">Service</a>
+    <a href="portfolio.html">Works</a>
   </div>
-  <a href="/contact/" class="navbar__cta">Let's Connect</a>
+  <a href="contact.html" class="navbar__cta">Let's Connect</a>
   <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -227,11 +227,11 @@
   <div class="footer__top">
     <div class="footer__left">
       <nav class="footer__nav">
-        <a href="../index.html">Home</a>
-        <a href="/studio/">Studio</a>
-        <a href="/services/">Service</a>
-        <a href="/portfolio/">Works</a>
-        <a href="/contact/">Lets Talk</a>
+        <a href="index.html">Home</a>
+        <a href="studio.html">Studio</a>
+        <a href="services.html">Service</a>
+        <a href="portfolio.html">Works</a>
+        <a href="contact.html">Lets Talk</a>
       </nav>
       
       <div class="footer__socials">
@@ -262,7 +262,7 @@
         <div class="footer__tagline">Lets Talk about <span>Good&nbsp;&nbsp;UX,</span></div>
         <div class="footer__email">hello@orangy.design</div>
         <div class="footer__phone">
-          <img class="footer__phone-icon" src="../assets/icons/whatsapp-svgrepo-com 1.svg" alt="WhatsApp">
+          <img class="footer__phone-icon" src="Assets/icons/whatsapp-svgrepo-com 1.svg" alt="WhatsApp">
           <span>+91 90035 78010</span>
         </div>
       </div>
@@ -271,12 +271,12 @@
 
   <div class="footer__bottom">
     <img class="footer__logo"
-         src="../assets/logos/Orangy-logo-footer-icon.svg"
+         src="Assets/logos/Orangy-logo-footer-icon.svg"
          alt="Orangy Design">
     <div class="footer__bottom-links">
-      <a href="/privacy/" class="footer__bottom-link footer__bottom-link--orange footer__bottom-link--active">Privacy policy</a>
+      <a href="privacy.html" class="footer__bottom-link footer__bottom-link--orange footer__bottom-link--active">Privacy policy</a>
       <span class="footer__separator">:</span>
-      <a href="/terms/" class="footer__bottom-link">Terms of use</a>
+      <a href="terms.html" class="footer__bottom-link">Terms of use</a>
       <span class="footer__separator">:</span>
       <span class="footer__copy">© 2026 Orangy Design LLP</span>
     </div>
@@ -284,48 +284,11 @@
   <!-- Sleek brand-styled glassmorphic toast notification -->
   <div id="summary-toast" class="summary-toast">Prompt copied! Redirecting...</div>
 
-  <script>
-    function askForSummary(service) {
-      const promptText = "As a product owner, analyze Orangy Design’s website and brand. Tell me what it's like to work with them, how they establish trust, and the business impact and real outcomes they create for their clients.";
-      
-      // Copy to clipboard with success feedback
-      navigator.clipboard.writeText(promptText).then(() => {
-        const toast = document.getElementById('summary-toast');
-        if (toast) {
-          toast.textContent = `Prompt copied! Opening ${service}...`;
-          toast.classList.add('summary-toast--visible');
-          setTimeout(() => {
-            toast.classList.remove('summary-toast--visible');
-          }, 3500);
-        }
-      }).catch(err => {
-        console.error('Failed to copy text: ', err);
-      });
-
-      // Target URLs
-      let targetUrl = '';
-      const encodedPrompt = encodeURIComponent(promptText);
-      
-      if (service === 'ChatGPT') {
-        targetUrl = `https://chatgpt.com/?q=${encodedPrompt}`;
-      } else if (service === 'Claude') {
-        targetUrl = `https://claude.ai/new?q=${encodedPrompt}`;
-      } else if (service === 'Perplexity') {
-        targetUrl = `https://www.perplexity.ai/search?q=${encodedPrompt}`;
-      } else if (service === 'Google AI') {
-        targetUrl = `https://gemini.google.com/app`;
-      }
-
-      if (targetUrl) {
-        setTimeout(() => {
-          window.open(targetUrl, '_blank');
-        }, 1200); // Elegant timing to allow reading the toast first
-      }
-    }
-  </script>
+  
 </footer>
 
-<script src="../js/main.js" defer></script>
-<script src="../js/pages/privacy.js" defer></script>
+
+
+<script src="Assets/js/main.js" defer></script>
 </body>
 </html>

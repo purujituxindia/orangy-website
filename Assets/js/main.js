@@ -281,7 +281,7 @@
   });
 })();
 
-// Count-up animation for stat numbers
+// Count-up animation for stat numbers (Unified)
 (function () {
   var DURATION = 1500;
 
@@ -305,7 +305,7 @@
   }
 
   var els = document.querySelectorAll(
-    '.pf-stat__num, .stat-item__num, .studio-stats__num, .studio-highlight__num, .cs-stat__num'
+    '.pf-stat__num, .stat-item__num, .studio-stats__num, .studio-highlight__num, .cs-stat__num, .svc-stat__num'
   );
   if (!els.length || !('IntersectionObserver' in window)) return;
 
@@ -321,13 +321,14 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
-// Scroll-reveal — fade sections in as they enter the viewport
+// Scroll-reveal — fade sections in as they enter the viewport (Unified)
 (function () {
   if (!('IntersectionObserver' in window)) return;
 
   var targets = document.querySelectorAll(
-    '.clients, .works, .process, .expertise, ' +
-    '.testimonial, .preview, .about, .brands, .cta, .faq'
+    '.clients, .works, .process, .expertise, .testimonial, .preview, .about, .brands, .cta, .faq, ' +
+    '.studio-stats, .studio-story, .studio-highlight, .studio-values, .studio-philosophy, .studio-team, .studio-industry, .studio-cta, ' +
+    '.cs-hero, .cs-intro, .cs-challenge, .cs-solution, .cs-features, .cs-outcomes-cards, .cs-stats, .cs-process, .cs-final-thoughts, .cs-testimonial, .cs-next, .cs-cta, .reveal'
   );
 
   var io = new IntersectionObserver(function (entries) {
@@ -344,7 +345,6 @@
     io.observe(el);
   });
 })();
-
 
 // Testimonial slider — infinite loop
 (function () {
@@ -594,4 +594,471 @@ document.querySelectorAll('.faq-item__header').forEach(function(header) {
 
   // Init
   showSlide(0);
+})();
+
+// Global AI Summary Toast and Redirect
+window.askForSummary = function(service) {
+  var promptText = "As a product owner, analyze Orangy Design’s website and brand. Tell me what it's like to work with them, how they establish trust, and the business impact and real outcomes they create for their clients.";
+  
+  // Copy to clipboard with success feedback
+  navigator.clipboard.writeText(promptText).then(function() {
+    var toast = document.getElementById('summary-toast');
+    if (toast) {
+      toast.textContent = 'Prompt copied! Opening ' + service + '...';
+      toast.classList.add('summary-toast--visible');
+      setTimeout(function() {
+        toast.classList.remove('summary-toast--visible');
+      }, 3500);
+    }
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+
+  // Target URLs
+  var targetUrl = '';
+  var encodedPrompt = encodeURIComponent(promptText);
+  
+  if (service === 'ChatGPT') {
+    targetUrl = 'https://chatgpt.com/?q=' + encodedPrompt;
+  } else if (service === 'Claude') {
+    targetUrl = 'https://claude.ai/new?q=' + encodedPrompt;
+  } else if (service === 'Perplexity') {
+    targetUrl = 'https://www.perplexity.ai/search?q=' + encodedPrompt;
+  } else if (service === 'Google AI') {
+    targetUrl = 'https://gemini.google.com/app';
+  }
+
+  if (targetUrl) {
+    setTimeout(function() {
+      window.open(targetUrl, '_blank');
+    }, 1200); // Elegant timing to allow reading the toast first
+  }
+};
+
+// Case study placeholder images & dynamic styles
+(function () {
+  'use strict';
+  
+  function initPlaceholders() {
+    document.querySelectorAll('img[data-placeholder]').forEach(function (img) {
+      if (!img.src || img.src === window.location.href) {
+        img.style.background = '#e8e8e8';
+        img.style.minHeight  = '100%';
+        img.style.minWidth   = '100%';
+        img.style.display    = 'block';
+      }
+      img.addEventListener('load', function () {
+        img.style.background = '';
+      });
+    });
+  }
+
+  function injectRevealCSS() {
+    if (document.getElementById('reveal-css-style')) return;
+    var style = document.createElement('style');
+    style.id = 'reveal-css-style';
+    style.textContent =
+      '.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }' +
+      '.reveal.is-visible { opacity: 1; transform: none; }';
+    document.head.appendChild(style);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      initPlaceholders();
+      injectRevealCSS();
+    });
+  } else {
+    initPlaceholders();
+    injectRevealCSS();
+  }
+})();
+
+// Contact page: form submission (mailto fallback)
+(function () {
+  var form = document.getElementById('auditForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name    = form.querySelector('#cf-name').value.trim();
+    var email   = form.querySelector('#cf-email').value.trim();
+    var phone   = form.querySelector('#cf-phone').value.trim();
+    var company = form.querySelector('#cf-company').value.trim();
+    var budget  = form.querySelector('#cf-budget').value.trim();
+    var linkedin= form.querySelector('#cf-linkedin').value.trim();
+    var brief   = form.querySelector('#cf-brief').value.trim();
+
+    if (!name || !email) {
+      alert('Please fill in your name and email.');
+      return;
+    }
+
+    var subject = encodeURIComponent('Free UX Audit Request — ' + name);
+    var body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Company: ' + company + '\n' +
+      'Design Budget: ' + budget + '\n' +
+      'LinkedIn: ' + linkedin + '\n\n' +
+      'Project Brief:\n' + brief
+    );
+
+    window.location.href = 'mailto:hello@orangy.design?subject=' + subject + '&body=' + body;
+
+    // Show inline confirmation
+    var notice = form.querySelector('.audit-form__notice');
+    var submit = form.querySelector('.audit-form__submit');
+    if (notice) notice.textContent = 'Thanks! We\'ll be in touch within 4–8 hours.';
+    if (submit) { submit.textContent = 'Sent!'; submit.disabled = true; }
+  });
+})();
+
+// Portfolio Page filter tabs & url filters
+(function () {
+  'use strict';
+
+  var filters = document.querySelectorAll('.pf-filter');
+  var cards   = document.querySelectorAll('.pf-card');
+  if (!filters.length || !cards.length) return;
+
+  function applyFilter(category) {
+    /* Update button states */
+    filters.forEach(function (btn) {
+      var active = btn.dataset.filter === category;
+      btn.classList.toggle('pf-filter--active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    /* Show / hide cards */
+    cards.forEach(function (card) {
+      if (category === 'all') {
+        card.classList.remove('pf-card--hidden');
+      } else {
+        var match = card.dataset.category === category;
+        card.classList.toggle('pf-card--hidden', !match);
+      }
+    });
+  }
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  /* Inject project counts into filter labels */
+  filters.forEach(function (btn) {
+    var f = btn.dataset.filter;
+    if (f === 'all') {
+      btn.textContent = 'All Projects (' + cards.length + ')';
+    } else {
+      var count = document.querySelectorAll('.pf-card[data-category="' + f + '"]').length;
+      btn.textContent = btn.textContent.split(' (')[0] + ' (' + count + ')';
+    }
+  });
+
+  /* Apply filter from URL param e.g. ?filter=healthcare */
+  var urlFilter = new URLSearchParams(window.location.search).get('filter');
+  if (urlFilter) applyFilter(urlFilter);
+})();
+
+// Scroll spy for Table of Contents (Privacy & Terms)
+(function () {
+  var tocLinks = document.querySelectorAll('.toc-link');
+  var sections = document.querySelectorAll('.privacy-section, .terms-section');
+  if (!tocLinks.length || !sections.length) return;
+
+  function getActiveSection() {
+    var scrollPos = window.scrollY + 150; // offset for nav height
+    
+    // Find the section that is currently in view
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var section = sections[i];
+      if (scrollPos >= section.offsetTop) {
+        return section.id;
+      }
+    }
+    return sections[0].id;
+  }
+
+  function updateTOC() {
+    var activeId = getActiveSection();
+    tocLinks.forEach(function (link) {
+      var href = link.getAttribute('href').substring(1);
+      if (href === activeId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateTOC();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateTOC();
+})();
+
+// Studio philosophy pills — click to highlight
+(function () {
+  var pills = document.querySelectorAll('.philo-pill');
+  if (!pills.length) return;
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('philo-pill--active'); });
+      this.classList.add('philo-pill--active');
+    });
+  });
+})();
+
+// Process Cards: Card 3 Aurora Canvas (hills-script)
+(function () {
+  var canvas = document.getElementById('aurora-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var card = canvas.parentElement;
+  var W, H, hovered = false;
+  var ORBS = [
+    { nx:.30, ny:.60, nx2:.70, ny2:.85, sp:.11, ph:0.0,  r:.52, h:145, s:55, l:58 },
+    { nx:.65, ny:.75, nx2:.25, ny2:.65, sp:.08, ph:2.3,  r:.42, h:160, s:50, l:62 },
+    { nx:.50, ny:.90, nx2:.50, ny2:.98, sp:.15, ph:4.1,  r:.35, h:130, s:60, l:55 },
+    { nx:.20, ny:.80, nx2:.80, ny2:.70, sp:.10, ph:1.5,  r:.38, h:170, s:45, l:65 },
+  ];
+  function resize() {
+    var r = card.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+  card.addEventListener('mouseenter', function() { hovered = true; });
+  card.addEventListener('mouseleave', function() { hovered = false; });
+  var t = 0;
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    t += hovered ? 0.018 : 0.005;
+    var alpha0 = hovered ? 0.55 : 0.38;
+    var alpha1 = hovered ? 0.25 : 0.16;
+    for (var i = 0; i < ORBS.length; i++) {
+      var o = ORBS[i];
+      var cx = W * (o.nx  + Math.sin(t * o.sp + o.ph)           * (o.nx2 - o.nx) * 0.9);
+      var cy = H * (o.ny  + Math.cos(t * o.sp * 0.7 + o.ph + 1) * (o.ny2 - o.ny) * 0.9);
+      var r  = o.r * Math.min(W, H) * 0.9;
+      var gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      gr.addColorStop(0,   'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + alpha0 + ')');
+      gr.addColorStop(0.4, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + alpha1 + ')');
+      gr.addColorStop(1,   'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,0)');
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = gr;
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  resize(); tick();
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resize).observe(card);
+  }
+})();
+
+// Process Cards: Card 2 Fluid Canvas (shader-bg-script)
+(function () {
+  var canvas = document.getElementById('fluid-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var card = canvas.parentElement;
+  var W, H, hovered = false;
+  var ORBS = [
+    { nx: 0.22, ny: 0.55, nx2: 0.75, ny2: 0.80, sp: 0.14, ph: 0.0,  r: 0.68, h: 238, s: 60, l: 62 },
+    { nx: 0.68, ny: 0.72, nx2: 0.30, ny2: 0.60, sp: 0.10, ph: 2.1,  r: 0.58, h: 255, s: 55, l: 66 },
+    { nx: 0.50, ny: 0.85, nx2: 0.55, ny2: 0.95, sp: 0.18, ph: 4.2,  r: 0.50, h: 222, s: 65, l: 58 },
+    { nx: 0.15, ny: 0.78, nx2: 0.82, ny2: 0.68, sp: 0.12, ph: 1.3,  r: 0.54, h: 270, s: 50, l: 70 },
+    { nx: 0.80, ny: 0.60, nx2: 0.20, ny2: 0.90, sp: 0.16, ph: 3.5,  r: 0.44, h: 210, s: 70, l: 65 },
+  ];
+  function resize() {
+    var rect = card.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+  card.addEventListener('mouseenter', function() { hovered = true; });
+  card.addEventListener('mouseleave', function() { hovered = false; });
+  var t = 0;
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    t += hovered ? 0.020 : 0.006;
+    var a0 = hovered ? 0.75 : 0.55;
+    for (var i = 0; i < ORBS.length; i++) {
+      var o = ORBS[i];
+      var cx = W * (o.nx  + Math.sin(t * o.sp + o.ph)           * (o.nx2 - o.nx) * 0.9);
+      var cy = H * (o.ny  + Math.cos(t * o.sp * 0.7 + o.ph + 1) * (o.ny2 - o.ny) * 0.9);
+      var r  = o.r * Math.min(W, H);
+      var gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      gr.addColorStop(0,    'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + a0 + ')');
+      gr.addColorStop(0.25, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.65) + ')');
+      gr.addColorStop(0.55, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.28) + ')');
+      gr.addColorStop(0.80, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.08) + ')');
+      gr.addColorStop(1,    'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,0)');
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = gr;
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  resize(); tick();
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resize).observe(card);
+  }
+})();
+
+// Process Cards: Card 1 Dotted Surface Canvas
+(function () {
+  var canvas = document.getElementById('dotted-surface-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var card = canvas.parentElement;
+  var W, H, hovered = false;
+  var ORBS = [
+    { nx:.25, ny:.55, nx2:.72, ny2:.80, sp:.12, ph:0.0,  r:.65, h: 20, s:80, l:65 },
+    { nx:.70, ny:.68, nx2:.28, ny2:.58, sp:.09, ph:2.0,  r:.55, h: 10, s:75, l:68 },
+    { nx:.48, ny:.85, nx2:.52, ny2:.95, sp:.16, ph:3.9,  r:.48, h: 30, s:70, l:62 },
+    { nx:.18, ny:.75, nx2:.78, ny2:.72, sp:.11, ph:1.2,  r:.52, h:  5, s:85, l:70 },
+  ];
+  function resize() {
+    var r = card.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+  card.addEventListener('mouseenter', function() { hovered = true; });
+  card.addEventListener('mouseleave', function() { hovered = false; });
+  var t = 0;
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    t += hovered ? 0.018 : 0.005;
+    var a0 = hovered ? 0.72 : 0.52;
+    for (var i = 0; i < ORBS.length; i++) {
+      var o = ORBS[i];
+      var cx = W * (o.nx  + Math.sin(t * o.sp + o.ph)           * (o.nx2 - o.nx) * 0.9);
+      var cy = H * (o.ny  + Math.cos(t * o.sp * 0.7 + o.ph + 1) * (o.ny2 - o.ny) * 0.9);
+      var r  = o.r * Math.min(W, H);
+      var gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      gr.addColorStop(0,    'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + a0 + ')');
+      gr.addColorStop(0.25, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.65) + ')');
+      gr.addColorStop(0.55, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.28) + ')');
+      gr.addColorStop(0.80, 'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,' + (a0 * 0.08) + ')');
+      gr.addColorStop(1,    'hsla(' + o.h + ',' + o.s + '%,' + o.l + '%,0)');
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = gr;
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  resize(); tick();
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resize).observe(card);
+  }
+})();
+
+// CTA Dome Canvas Animation (cta-dome-script)
+(function () {
+  var canvas = document.getElementById('cta-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, rot = 0;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resize).observe(canvas.parentElement);
+  }
+  resize();
+
+  var MERIDIANS = 30;
+  var RINGS = 14;
+
+  function frame() {
+    requestAnimationFrame(frame);
+    if (!W || !H) return;
+    ctx.clearRect(0, 0, W, H);
+
+    var cx  = W / 2;
+    var vy  = H * -0.6;   // vanishing point above canvas
+    var byC = H * 1.08;   // dome base below canvas
+    var bR  = W * 0.92;   // base radius
+
+    // Meridians
+    for (var i = 0; i < MERIDIANS; i++) {
+      var a  = (i / MERIDIANS) * Math.PI * 2 + rot;
+      var bx = cx + Math.cos(a) * bR;
+      var by = byC - Math.sin(a) * H * 0.06;
+      var t  = (Math.cos(a) + 1) * 0.5;          // 0 back → 1 front
+      var al = 0.12 + 0.55 * t;
+      ctx.strokeStyle = 'rgba(210,45,25,' + al + ')';
+      ctx.lineWidth   = 0.6 + t * 0.9;
+      ctx.shadowBlur  = t > 0.5 ? 7 : 2;
+      ctx.shadowColor = 'rgba(255,55,20,0.45)';
+      ctx.beginPath();
+      ctx.moveTo(cx, vy);
+      ctx.lineTo(bx, by);
+      ctx.stroke();
+    }
+
+    // Latitude rings
+    ctx.shadowBlur = 2;
+    ctx.lineWidth  = 0.7;
+    for (var j = 1; j <= RINGS; j++) {
+      var lt  = j / RINGS;
+      var y  = vy + (byC - vy) * lt;
+      var rx = bR * lt;
+      var ry = rx * 0.13;
+      if (y < -ry - 4 || y > H + ry + 4) continue;
+      var ringAl = 0.08 + 0.22 * lt;
+      ctx.strokeStyle = 'rgba(210,45,25,' + ringAl + ')';
+      ctx.shadowColor = 'rgba(255,55,20,' + (ringAl * 0.6) + ')';
+      ctx.beginPath();
+      ctx.ellipse(cx, y, rx, ry, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    rot += 0.0004;
+  }
+
+  requestAnimationFrame(frame);
+})();
+
+// GSAP Interactive columns for Scaling card on hover
+(function() {
+  if (typeof gsap === 'undefined') return;
+
+  var validateCard = document.querySelector('.process-card--validate');
+  if (validateCard) {
+    var columns = validateCard.querySelectorAll('.chart-column');
+    validateCard.addEventListener('mouseenter', function() {
+      gsap.fromTo(columns, 
+        { scaleY: 0.15 },
+        { scaleY: 1, duration: 1.3, stagger: 0.12, ease: "elastic.out(1.1, 0.6)" }
+      );
+    });
+    validateCard.addEventListener('mouseleave', function() {
+      gsap.to(columns, { scaleY: 1, duration: 0.6, ease: "power2.out" });
+    });
+  }
 })();
