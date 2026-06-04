@@ -509,7 +509,7 @@
   position: relative;
   overflow: hidden;
   background: #0c0c0c;
-  min-height: 65vh;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,9 +553,25 @@
   margin-top: clamp(4px, 0.417vw, 8px);
 }
 .studio-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
   margin-top: min(1.25vw, 24px);
   padding: min(1.042vw, 20px) min(1.667vw, 32px);
   font-size: var(--fs-24);
+  border-radius: var(--r-btn);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 80, 35, 0.2);
+  text-decoration: none;
+}
+.studio-cta__btn:hover {
+  transform: translateY(-2px);
+  background: #ff653f;
+  box-shadow: 0 8px 20px rgba(255, 80, 35, 0.4);
 }
 
 

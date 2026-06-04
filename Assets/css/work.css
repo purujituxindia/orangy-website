@@ -325,7 +325,7 @@
   position: relative;
   overflow: hidden;
   background: #0c0c0c;
-  min-height: 65vh;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,10 +380,15 @@
   font-weight: 700;
   padding: min(1.042vw, 20px) min(1.667vw, 32px);
   border-radius: var(--r-btn);
-  transition: opacity 0.2s;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255, 80, 35, 0.2);
 }
-.pf-cta__btn:hover { opacity: 0.88; }
+.pf-cta__btn:hover {
+  transform: translateY(-2px);
+  background: #ff653f;
+  box-shadow: 0 8px 20px rgba(255, 80, 35, 0.4);
+}
 
 
 /* ===========================
@@ -401,7 +406,8 @@
   .pf-card--full {
     grid-column: 1;
   }
-  .pf-card__img-wrap {
+  .pf-card__img-wrap,
+  .pf-card__img-wrap--contain {
     height: min(50vw, 380px);
   }
   .pf-stats {

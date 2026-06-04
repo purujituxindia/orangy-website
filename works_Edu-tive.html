@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoQ Store — Case Study | Orangy Design</title>
-  <meta name="description" content="Read the NoQ Store UI/UX case study. Learn how Orangy Design designed a queue-free retail experience, smart onboarding, and one-tap checkout for digitized convenience stores.">
-  <meta name="keywords" content="NoQ Store, Retail UX, Unmanned Store, Queue-Free, Self-Service Shopping, Smart Onboarding, One-Tap Checkout, Orangy Design">
+  <title>Edu-tive – Streamlining School Operations with Human-Centred UX</title>
+  <link rel="canonical" href="https://orangy.design/works_Edu-tive.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800" rel="stylesheet">
@@ -18,19 +17,19 @@
 <!-- =========================================
      MOBILE NAV OVERLAY (reused)
 ========================================= -->
-<div class="mobile-nav" aria-hidden="true" id="mobileNavOverlay">
-  <button class="mobile-nav__close" aria-label="Close menu" id="mobileNavCloseBtn">&times;</button>
+<div class="mobile-nav" aria-hidden="true">
+  <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
   <a href="studio.html">Studio</a>
   <a href="services.html">Service</a>
-  <a href="portfolio.html">Works</a>
+  <a href="work.html">Works</a>
   <a href="contact.html" class="mobile-nav__cta">Let's Connect</a>
 </div>
 
 <!-- =========================================
      NAVBAR (reused — sticky variant)
 ========================================= -->
-<nav class="navbar navbar--page" id="mainStickyNavbar">
-  <a href="index.html" id="navbarHomeLink">
+<nav class="navbar navbar--page">
+  <a href="index.html">
     <img class="navbar__logo"
          src="Assets/logos/Orangy-logo-white-bg-orange-icon.svg"
          alt="Orangy Design">
@@ -38,7 +37,7 @@
   <div class="navbar__nav">
     <a href="studio.html">Studio</a>
     <a href="services.html">Service</a>
-    <a href="portfolio.html" class="navbar__nav--active">Works</a>
+    <a href="work.html" class="navbar__nav--active">Works</a>
   </div>
   <a href="contact.html" class="navbar__cta">Let's Connect</a>
   <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
@@ -50,35 +49,37 @@
 <!-- =========================================
      CASE STUDY HERO
 ========================================= -->
-<section class="cs-hero" id="noqHeroSection">
+<section class="cs-hero">
   <div class="cs-hero__top">
     <div class="cs-hero__title-group">
-      <h1 class="cs-hero__title">NoQ Store</h1>
-      <p class="cs-hero__subtitle">Redefining Retail Through Seamless Experiences</p>
+      <h1 class="cs-hero__title">Edu-tive</h1>
+      <p class="cs-hero__subtitle">Architecting the Future of K-12 Management</p>
       <div class="cs-hero__tags">
-        <span class="cs-tag">Research & Analysis</span>
-        <span class="cs-tag">Information Architecture</span>
-        <span class="cs-tag">UX/UI Design</span>
+        <span class="cs-tag">Interaction Design</span>
+        <span class="cs-tag">Data Visualization</span>
+        <span class="cs-tag">Dashboard Design</span>
       </div>
     </div>
 
     <div class="cs-hero__meta">
       <div class="cs-meta-item">
         <span class="cs-meta-item__label">Tools Used</span>
-        <span class="cs-meta-item__value">Figma <span class="cs-meta-item__sep">|</span> Miro <span class="cs-meta-item__sep">|</span> UserTesting <span class="cs-meta-item__sep">|</span> Jira</span>
+        <span class="cs-meta-item__value">Figma <span class="cs-meta-item__sep">|</span> Miro <span class="cs-meta-item__sep">|</span> Balsamiq</span>
       </div>
       <div class="cs-meta-item">
         <span class="cs-meta-item__label">Time Line</span>
-        <span class="cs-meta-item__value">8 Weeks</span>
+        <span class="cs-meta-item__value">12 Weeks</span>
       </div>
     </div>
   </div>
 
+  <!-- Hero banner image — replace src with actual image path -->
   <div class="cs-hero__img-wrap">
     <img class="cs-hero__img"
-         src="Assets/images/works/noq/image-9.webp"
-         alt="NoQ Store app — hero banner"
-         data-placeholder="cs-hero-banner">
+         src="Assets/images/works/edu-tive/edu-tive-website-mockup-1.avif"
+         alt="Edu-tive K-12 platform — hero banner"
+         data-placeholder="cs-hero-banner"
+         style="object-fit: contain; background: #ffffff;">
   </div>
 </section>
 
@@ -88,7 +89,7 @@
 ========================================= -->
 <section class="cs-intro">
   <p class="cs-intro__text">
-    Adhiban serves a diverse spectrum of clients, each with unique financial behaviours, goals, and challenges. Our role was to translate these complex, highly-specific financial needs into intuitive digital workflows that simplify decision-making and build trust.
+    Edu-tive, a pioneering ed-tech firm, needed to build an Integrated School Quality Management System (ISQMS) that could genuinely unify K-12 school operations across diverse boards in India and globally.
   </p>
 </section>
 
@@ -96,10 +97,14 @@
 <!-- =========================================
      THE CHALLENGE
 ========================================= -->
-<section class="cs-challenge" id="noqChallengeSection">
+<section class="cs-challenge">
   <h2 class="cs-section-title">The Challenge</h2>
   <p class="cs-challenge__body">
-    NoQ’s vision was bold—but the existing mobile experience fell short. Customers faced confusing onboarding and store entry, cluttered interfaces, unclear product navigation, and a multi-step checkout flow that led to cart abandonment. The app needed more than a visual refresh; it required a complete UX overhaul, aligned with the physical store design and user behavior.
+    How do you blend complex academic performance tracking, administrative workflows, and diverse stakeholder engagement (teachers, admins, parents, students) into one intuitive, high-performance platform? We faced a trifecta of design hurdles that stop most in-house teams:
+    
+    Fragmented Users: Bridging the unique, often conflicting, workflows and expectations of educators, administrators, and parents.
+    Feature Overload Risk: Integrating real-time analytics, complex administrative tools, and academic management without creating a confusing, overwhelming interface.
+    Future-Proofing: Designing a foundation that is inherently scalable to meet evolving K-12 requirements and international educational standards.
   </p>
 </section>
 
@@ -107,36 +112,37 @@
 <!-- =========================================
      THE SOLUTION
 ========================================= -->
-<section class="cs-solution" id="noqSolutionSection">
+<section class="cs-solution">
   <div class="cs-solution__header-row">
     <h2 class="cs-section-title">The Solution</h2>
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Empathy-Driven In-Store Audit:</p>
+      <p class="cs-solution-card__heading">Persona-Driven IA:</p>
       <p class="cs-solution-card__body">
-        We designed not just for screens—but for real people in physical stores. We conducted usability audits of the legacy app, ran stakeholder interviews, and performed deep user journey analysis to map store entry, scan-to-cart actions, and final payments.
+        Reorganizing school dashboards into custom viewports for admins, teachers, and parents to keep interfaces uncluttered.
       </p>
     </div>
   </div>
 
   <div class="cs-solution__cards-row">
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Clear Visual Architecture:</p>
+      <p class="cs-solution-card__heading">Streamlined Grading:</p>
       <p class="cs-solution-card__body">
-        We created a clean, modern interface focusing on minimalism and logical flows. Product pages, cart views, and checkout details were re-architected to minimize cognitive load and eliminate purchasing hesitation.
+        Designing a spreadsheet-like grid system that allows teachers to record grades quickly with keyboard-only navigation.
       </p>
     </div>
     <div class="cs-solution-card">
-      <p class="cs-solution-card__heading">Seamless Checkout Integration:</p>
+      <p class="cs-solution-card__heading">Interactive Analytics:</p>
       <p class="cs-solution-card__body">
-        To prevent cart abandonment, we streamlined the checkout experience into a secure, one-tap process using Google Pay, digital wallets, and credit cards, making transaction success effortless.
+        Translating massive datasets of student metrics into clean, interactive visualization panels for leadership.
       </p>
     </div>
   </div>
 
+  <!-- Solution image — replace src with actual image path -->
   <div class="cs-solution__img-wrap">
     <img class="cs-solution__img"
-         src="Assets/images/works/noq/noq-4.webp"
-         alt="NoQ Store solution — wireframes and designs"
+         src="Assets/Portfolio/edu-tive-website-mockup.avif"
+         alt="Adhiban solution — wireframes and designs"
          data-placeholder="cs-solution-img">
   </div>
 </section>
@@ -145,32 +151,32 @@
 <!-- =========================================
      KEY FEATURES
 ========================================= -->
-<section class="cs-features" id="noqFeaturesSection">
+<section class="cs-features">
   <div class="cs-features__inner">
     <div class="cs-features__left">
       <h2 class="cs-section-title">Key Features</h2>
       <p class="cs-features__desc">
-        We focused on a minimalist, clutter-free interface for the retail mobile app. Our approach prioritized simplicity, ensuring a smooth and intuitive user experience. We crafted a logical flow that guides users effortlessly from entry to checkout.
+        We designed an intuitive, scalable, and engaging ISQMS that streamlines quality management processes, improves usability for daily school operations, and scales seamlessly as institutions grow.
       </p>
     </div>
 
     <div class="cs-features__right">
       <div class="cs-features__grid">
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Smart Onboarding</p>
-          <p class="cs-feature-item__body">Geofenced prompts guide new users automatically upon entering the store.</p>
+          <p class="cs-feature-item__title">Persona-Driven Dashboards</p>
+          <p class="cs-feature-item__body">Custom workflows for educators, administrators, and parents.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">Scan to Add</p>
-          <p class="cs-feature-item__body">Users can scan barcodes to add items directly to their cart with a single tap.</p>
+          <p class="cs-feature-item__title">Interactive Data Visualization</p>
+          <p class="cs-feature-item__body">15+ charts, graphs, and infographics for clear insights.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">One-Tap Checkout</p>
-          <p class="cs-feature-item__body">Streamlined checkout flow using Google Pay, digital wallets, and cards.</p>
+          <p class="cs-feature-item__title">Logical Information Architecture</p>
+          <p class="cs-feature-item__body">Easy navigation across academic, administrative, and feedback modules.</p>
         </div>
         <div class="cs-feature-item">
-          <p class="cs-feature-item__title">AI Chat Assistant</p>
-          <p class="cs-feature-item__body">Built-in support for assistance, store navigation, and FAQs.</p>
+          <p class="cs-feature-item__title">Modular UI System</p>
+          <p class="cs-feature-item__body">Built to grow with schools’ evolving needs.</p>
         </div>
       </div>
     </div>
@@ -181,17 +187,19 @@
 <!-- =========================================
      OUTCOMES — IMAGE CARDS
 ========================================= -->
-<section class="cs-outcomes-cards" id="noqOutcomesCardsSection">
+<section class="cs-outcomes-cards">
   <div class="cs-outcomes-card">
+    <!-- Replace src with actual image path -->
     <img class="cs-outcomes-card__img cs-outcomes-card__img--left"
-         src="Assets/images/works/noq/noq-6.webp"
-         alt="NoQ Store app — item list and scanning UI"
+         src="Assets/images/works/edu-tive/edu-tive-website 1.avif"
+         alt="Edu-tive platform — outcome dashboard visual 1"
          data-placeholder="cs-outcome-img-1">
   </div>
   <div class="cs-outcomes-card">
+    <!-- Replace src with actual image path -->
     <img class="cs-outcomes-card__img cs-outcomes-card__img--center"
-         src="Assets/images/works/noq/noq-7.webp"
-         alt="NoQ Store app — cart and checkout UI"
+         src="Assets/images/works/edu-tive/edu-tive-website.avif"
+         alt="Edu-tive platform — outcome dashboard visual 2"
          data-placeholder="cs-outcome-img-2">
   </div>
 </section>
@@ -200,34 +208,34 @@
 <!-- =========================================
      OUTCOMES — STATS (dark)
 ========================================= -->
-<section class="cs-stats" id="noqStatsSection">
+<section class="cs-stats">
   <div class="cs-stats__header">
     <p class="cs-stats__eyebrow">OUTCOMES</p>
     <p class="cs-stats__subtitle">
-      Simplified onboarding and intuitive UI led to more users completing sign-up and engaging with the app within the first session.
+      Enhanced engagement with parents and stakeholders through clear dashboards.
     </p>
   </div>
 
   <div class="cs-stats__grid">
     <div class="cs-stat">
-      <p class="cs-stat__num">+63%</p>
+      <p class="cs-stat__num">30%</p>
       <div class="cs-stat__body">
-        <p class="cs-stat__title">Increased Purchases</p>
-        <p class="cs-stat__desc">63% increase in completed purchases compared to the legacy app.</p>
+        <p class="cs-stat__title">Faster Tasks</p>
+        <p class="cs-stat__desc">Increased workflow completion rates for educators and administrators.</p>
       </div>
     </div>
     <div class="cs-stat">
-      <p class="cs-stat__num">-58%</p>
+      <p class="cs-stat__num">100+</p>
       <div class="cs-stat__body">
-        <p class="cs-stat__title">Reduced Abandonment</p>
-        <p class="cs-stat__desc">58% drop in app abandonment during the shopping flow.</p>
+        <p class="cs-stat__title">Visualized KPIs</p>
+        <p class="cs-stat__desc">Key metrics rendered in real-time for actionable school insights.</p>
       </div>
     </div>
     <div class="cs-stat">
-      <p class="cs-stat__num">90%+</p>
+      <p class="cs-stat__num">92%</p>
       <div class="cs-stat__body">
-        <p class="cs-stat__title">Task Success Rate</p>
-        <p class="cs-stat__desc">Users reported a flawless checkout experience with high satisfaction.</p>
+        <p class="cs-stat__title">User Satisfaction</p>
+        <p class="cs-stat__desc">High usability and clarity scores reported post-launch.</p>
       </div>
     </div>
   </div>
@@ -237,66 +245,58 @@
 <!-- =========================================
      THE PROCESS
 ========================================= -->
-<!-- <section class="cs-process" id="noqProcessSection1">
+<section class="cs-process">
+  <!-- Replace src with actual image path -->
   <img class="cs-process__img"
-       src="Assets/images/works/noq/noq-5.webp"
-       alt="NoQ Store — design process screens"
-       data-placeholder="cs-process-img-1">
-  <p class="cs-process__label">The Process</p>
-</section> -->
-
-<section class="cs-process" id="noqProcessSection2">
-  <img class="cs-process__img"
-       src="Assets/images/works/noq/noq-8.webp"
-       alt="NoQ Store — final screens mockup"
-       data-placeholder="cs-process-img-2">
+       src="Assets/Portfolio/edu-tive-website-mockup-2.avif"
+       alt="Edutive — design process"
+       data-placeholder="cs-process-img">
 </section>
 
 
 <!-- =========================================
      FINAL THOUGHTS
 ========================================= -->
-<section class="cs-final-thoughts" id="noqFinalThoughtsSection">
+<section class="cs-final-thoughts">
   <h2 class="cs-final-thoughts__title">Final Thoughts</h2>
   <p class="cs-final-thoughts__body">
-    Our <strong>design philosophy</strong> turned <strong>retail complexity</strong> into <strong>human-centered simplicity</strong>. By engineering adaptive workflows and intuitive scan-to-cart dashboards, we ensured every customer experiences NoQ Store as a personal, <strong>trusted catalyst for seamless shopping</strong>.
+    We help EdTech companies turn complex platforms into simple, engaging experiences. Whether you’re building a new system or improving an existing one, we transform workflows into intuitive journeys, present complex data clearly through dashboards, and create scalable designs that grow with your platform.
   </p>
 </section>
 
 
 <!-- =========================================
-     TESTIMONIAL (Commented Out - No Testimonial Provided for NoQ Store)
+     TESTIMONIAL
 ========================================= -->
-<!--
-<section class="cs-testimonial" id="noqTestimonialSection">
+<section class="cs-testimonial">
   <div class="cs-testimonial__card">
+    <!-- Decorative icon -->
     <img class="cs-testimonial__icon"
          src="Assets/icons/ICON.svg"
          alt="" aria-hidden="true">
 
     <p class="cs-testimonial__heading">Testimonial</p>
     <blockquote class="cs-testimonial__quote">
-      ...
+      The school platform UX has transformed our daily management. Admins and teachers can navigate their tasks 30% faster, and parents are more engaged than ever.
     </blockquote>
     <div class="cs-testimonial__author">
-      <div class="cs-testimonial__avatar cs-testimonial__avatar--fallback" aria-hidden="true">LH</div>
+      <div class="cs-testimonial__avatar cs-testimonial__avatar--fallback" aria-hidden="true">AS</div>
       <div class="cs-testimonial__author-info">
-        <p class="cs-testimonial__name">...</p>
-        <p class="cs-testimonial__role">...</p>
+        <p class="cs-testimonial__name">Anitha Selvam</p>
+        <p class="cs-testimonial__role">Principal, Global International School</p>
       </div>
     </div>
   </div>
 </section>
--->
 
 
 <!-- =========================================
      NEXT PROJECT
 ========================================= -->
-<section class="cs-next" id="noqNextProjectSection">
+<section class="cs-next" id="edutiveNextProjectSection">
   <div class="cs-next__info">
-    <p class="cs-next__title">SDL</p>
-    <a href="casestudy-sdl.html" class="cs-next__btn" id="noqNextProjectBtn">
+    <p class="cs-next__title">Adhiban</p>
+    <a href="Works_Adhiban.html" class="cs-next__btn" id="edutiveNextProjectBtn">
       Next Project
       <svg class="cs-next__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
@@ -304,9 +304,9 @@
     </a>
   </div>
   <div class="cs-next__preview">
-    <img class="cs-next__preview-img"
-         src="Assets/Portfolio/SDL.png"
-         alt="SDL preview"
+    <img class="cs-next__preview-img cs-next__preview-img--portfolio"
+         src="Assets/Portfolio/Adhiban.png"
+         alt="Adhiban preview"
          data-placeholder="cs-next-project-img">
   </div>
 </section>
@@ -315,7 +315,7 @@
 <!-- =========================================
      CTA
 ========================================= -->
-<section class="cs-cta" id="noqCtaSection">
+<section class="cs-cta">
   <canvas id="cta-canvas" class="cs-cta__canvas" aria-hidden="true"></canvas>
   <div class="cs-cta__content">
     <div class="cs-cta__heading">
@@ -376,7 +376,7 @@
         <a href="index.html">Home</a>
         <a href="studio.html">Studio</a>
         <a href="services.html">Service</a>
-        <a href="portfolio.html" class="footer__nav-active">Works</a>
+        <a href="work.html" class="footer__nav-active">Works</a>
         <a href="#">Lets Talk</a>
       </nav>
       
@@ -414,9 +414,9 @@
          src="Assets/logos/Orangy-logo-footer-icon.svg"
          alt="Orangy Design">
     <div class="footer__bottom-links">
-      <a href="privacy.html" class="footer__bottom-link footer__bottom-link--orange">Privacy policy</a>
+      <a href="Privacy-policy.html" class="footer__bottom-link footer__bottom-link--orange">Privacy policy</a>
       <span class="footer__separator">:</span>
-      <a href="terms.html" class="footer__bottom-link">Terms of use</a>
+      <a href="Terms-of-use.html" class="footer__bottom-link">Terms of use</a>
       <span class="footer__separator">:</span>
       <span class="footer__copy">© 2026 Orangy Design LLP</span>
     </div>

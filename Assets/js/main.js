@@ -77,13 +77,17 @@
 
   function update() {
     if (window.innerWidth <= 600) {
+      card.style.transform = '';
       ticking = false;
       return;
     }
     var scrollY = window.scrollY;
     var progress = Math.max(0, Math.min(1, scrollY / range));
+    
+    // Card movement
     var y = 60 - 62 * progress;
     card.style.transform = 'translateX(-50%) translateY(' + y + '%)';
+
     ticking = false;
   }
 
@@ -543,9 +547,11 @@ document.querySelectorAll('.faq-item__header').forEach(function(header) {
   }
 
   function pauseAutoplay() {
+    if (isPaused) return; // Prevent duplicate pause calculations
     isPaused = true;
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
     }
     if (startTime) {
       elapsedBeforePause += performance.now() - startTime;
@@ -555,8 +561,14 @@ document.querySelectorAll('.faq-item__header').forEach(function(header) {
   function resetProgressBar() {
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
     }
+    // Temporarily disable CSS transition for an instant reset to 0% width
+    progressBar.style.transition = 'none';
     progressBar.style.width = '0%';
+    progressBar.offsetHeight; // Force reflow
+    progressBar.style.transition = ''; // Restore CSS transition
+    
     elapsedBeforePause = 0;
     startTime = null;
     if (!isPaused) {
@@ -587,10 +599,33 @@ document.querySelectorAll('.faq-item__header').forEach(function(header) {
   });
 
   container.addEventListener('mouseleave', function() {
+    if (!isPaused) return; // Only resume if it was actually paused
     isPaused = false;
-    startTime = performance.now();
+    startTime = null; // Let the next animation frame capture the correct timestamp
     animationFrameId = requestAnimationFrame(animateProgressBar);
   });
+
+  // Touch swipe support for mobile
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  container.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  container.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    var threshold = 50; // minimum distance in pixels to trigger swipe
+    if (touchEndX < touchStartX - threshold) {
+      nextSlide(); // Swipe left -> Next slide
+    } else if (touchEndX > touchStartX + threshold) {
+      prevSlide(); // Swipe right -> Previous slide
+    }
+  }
 
   // Init
   showSlide(0);
